@@ -40,7 +40,6 @@ Tienda online inspirada en Guilty Gear Strive que se desarrolló con tecnología
 > Debido a que la creación de usuarios aún no está implementada desde la interfaz, se debe usar el siguiente usuario para ingresar:
 - **Email:** `sol.badguy@guiltygear.com`  
 - **Password:** `Sol2025`
-- 
 
 ## Próximos pasos / Pendientes
 - Implementar mensaje de bienvenida para usuarios al ingresar a la tienda.  
