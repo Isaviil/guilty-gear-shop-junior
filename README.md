@@ -42,7 +42,8 @@ Tienda online inspirada en Guilty Gear Strive que se desarrolló con tecnología
 - Ajustar estilos con reglas `@media` para mejorar la responsividad en diferentes dispositivos.  
 - Integrar animaciones con GSAP para mejorar la experiencia visual.
 
-##⚠️ Disclaimer
-Este proyecto fue desarrollado únicamente con fines educativos como parte de una práctica académica.
-Todos los derechos de Guilty Gear, sus personajes, logotipos, imágenes y demás elementos visuales pertenecen a Arc System Works.
+
+## ⚠️ Disclaimer  
+Este proyecto fue desarrollado únicamente con fines educativos como parte de una práctica académica.  
+Todos los derechos de Guilty Gear, sus personajes, logotipos, imágenes y demás elementos visuales pertenecen a **Arc System Works**.  
 No se busca obtener ningún beneficio económico ni infringir los derechos de autor de la marca original.
