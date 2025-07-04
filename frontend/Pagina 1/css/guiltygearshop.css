@@ -1,0 +1,1092 @@
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    background-color: rgb(46, 44, 44);
+}
+
+
+/**@@@@@@@@@@@@@@@@@*/
+/**Navbar de la store completa, difernete al original*/
+.main-container{
+    height: auto;
+    width: 100%;
+    background-color: black;
+}
+
+
+.navbar{
+    width: 100%;
+    height: 3.3vh;
+    background: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar .nav-left{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 25%;
+    max-width: 420px;
+    min-width: 410px;
+}
+
+.nav-index, .nav-xbox, .nav-ps5, .nav-pc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 70%;
+    border-right: solid 1px rgb(238, 233, 233, .5);
+}
+
+.navbar a{
+    color: white;
+    text-decoration: none;
+}
+
+.navbar .nav-right{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 28%;
+    max-width: 445px;
+    min-width: 410px;
+}
+
+.navbar .carrito-icono{
+    width: 10%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.carrito-icono .carrito-icono-cantidad{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10%;
+    right: -30%;
+    width: 24px;
+    height: 24px;
+    background-color: rgb(151, 26, 26);
+    color: white;
+    border-radius: 50%;
+    font-size: 1.1em;
+    font-family: Arial, Helvetica, sans-serif;
+    pointer-events: none;
+}
+
+.navbar .carrito-icono .bi-cart{
+    color: white;
+    font-size: 1.7em;
+}
+
+.nav-right .nav-sign-in{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 65%;
+    text-transform: uppercase;
+    background-color: rgb(151, 26, 26);
+    position: relative;
+    z-index: 10;
+    min-width: 130px;
+}
+
+.nav-right .nav-shop-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 65%;
+    text-transform: uppercase;
+}
+
+.navbar a{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    transition: .2s ease-in-out;
+}
+
+.navbar .nav-sign-in a{
+    width: 100%;
+    text-align: center;
+}
+
+/**Dropdown del nombre*/
+
+.nav-sign-in ul {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 100%;
+    background-image: linear-gradient(120deg, rgb(12, 12, 12), rgb(44, 38, 38), rgb(59, 53, 53), rgb(58, 57, 57));
+    list-style: none;
+    gap: 10px;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.nav-sign-in ul li{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.1em;
+    cursor: pointer;
+    padding: 5px 5px;
+    transition: color .4s ease-in-out;
+}
+
+.nav-sign-in ul li:first-child{
+    border-bottom: 1px solid rgb(216, 215, 215, .6);
+}
+
+.nav-sign-in ul li a{
+    font-size: 1.1em;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    transition: color .4s ease-in-out;
+}
+
+.dropdown li:hover, .dropdown li:hover a{
+    color: red;
+}
+
+
+
+
+
+
+
+/**@@@@@@@@@@@@@@@@@*/
+/** Navbar inferior de las 3 opciones */
+.navbar-bottom-options{
+    display: flex;
+    height: 4vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background: rgb(255, 255, 255);
+}
+
+.navbar-bottom-options a{
+    color: black;
+    text-decoration: none;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 700;
+    transition: .25s ease-in-out;
+}
+
+
+.nav-story:hover a{
+    color: red;
+}
+
+/**@@@@@@@@@@@@@@@@@*/
+/**STYLOS PARA EL NAVBAR.*/
+.navbar .nav-left a:hover{
+    color: rgb(255, 6, 6);
+}
+
+
+
+/**@@@@@@@@@@@@@@@@@*/
+/** CSS DEL VIDEO Y CARRUSEL DE LA TIENDA */
+
+.guiltyHero{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.guiltyHero .guiltyHero-video{
+    height: 85vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative
+}
+
+.guiltyHero .guiltyHero-video video{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+
+/**CSS DEL TEXTO DENTRO DEL VIDEO*/
+.guiltyHero .guiltyHero-text{
+    position: absolute;
+    height: 40%;
+    width: 50%;
+    top: 5%;
+    left: 5%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.guiltyHero-text span{
+    color: red;
+}
+
+.guiltyHero-text .add-to-cart{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 13%;
+    background-image: linear-gradient(120deg, rgb(245, 192, 94), rgb(201, 149, 54));
+    border-radius: 20px;
+    transition: .1s ease-in-out;
+}
+
+.guiltyHero-text .add-to-cart:hover {
+    transform: scale(1.05);
+    background-image: linear-gradient(120deg, rgb(197, 148, 41), rgb(255, 214, 139));
+}
+
+.guiltyHero-text .add-to-cart:hover a{
+    color: white;
+}
+
+.guiltyHero-text .add-to-cart a{
+    flex: 1;
+    text-align: center;
+    display: block;
+    color: black;
+    text-decoration: none;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 800;
+    transition: .3s ease-in-out;
+}
+
+.guiltyHero .guiltyHero-text .guilty-text-name h2{
+    color: white;
+    font-size: 3.5em;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 700;
+}
+
+.guiltyHero .guiltyHero-text .guilty-text-name p,
+.guiltyHero .guiltyHero-text .guilty-text-description p{
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+
+
+
+
+/**CSS DEL OVERLAY DEL VIDEO*/
+
+.guiltyHero .guiltyHero-video .fading-gradient{
+    background-image: linear-gradient(
+    270deg,
+    rgba(0, 0, 0, .4),
+    rgba(0, 0, 0, .6),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 1)
+);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+
+
+
+
+/**CSS DEL MINI CAROUSEL*/
+.guiltyHero .guiltyHero-carousel{
+    height: 35vh;
+    background-color: rgb(0, 0, 0);
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+}
+
+.guiltyHero .guiltyHero-carousel .carousel-container{
+    display: flex;
+    flex-shrink: 0;
+    height: 90%;
+    width: 30%;
+    background-color: rgb(70, 70, 70);
+    border-radius: 15px;
+    position: relative;
+    transition: 0.2s ease-in-out;
+}
+
+.guiltyHero .guiltyHero-carousel .carousel-container:hover{
+    transform: scale(1.02);
+}
+
+.carousel-container .play-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    position: absolute
+}
+
+.carousel-container .play-button .bi{
+    font-size: 5rem;
+    color: white;
+    z-index: 2;
+    pointer-events: none;
+    transition: 0.2s ease-in-out;
+}
+
+.carousel-container .carousel-thumbnail{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/**Flechitas*/
+
+.flechitas{
+    width: 100%;
+    height: 4vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+}
+
+.flechitas .bi{
+    background: black;
+    color: white;
+    font-size: 2.5em;
+    font-weight: 800;
+    cursor: pointer;
+    padding: 5px 5px;
+}
+
+
+.flechitas-arrows .flechitas-thumbnail-elem{
+    height: 13%;
+    width: 16%;
+    cursor: pointer;
+    background-color: white;
+    transition: .2s ease-in-out;
+}
+
+.flechitas-arrows .flechitas-thumbnail-elem:hover{
+    background-color: rgb(204, 26, 26);
+}
+
+
+.carousel-container:hover .play-button .bi {
+    transform: scale(1.1);
+}
+
+
+
+
+
+/**CONTENEDOR QUE MOSTRAR LOS SEASON PASS*/
+.guilty-tienda{
+    width: 100%;
+    height: auto;
+    background-image: url('../img/Strivebackground.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0px 0px;
+    padding-bottom: 100px;
+    gap: 90px;
+}
+
+/**CONTENEDOR EN EL QUE MOSTRAMOS LOS SEASON PASS/PJS - TOCA AGREGAR KEY*/
+
+.guilty-tienda .guilty-tienda-main{
+    width: 97%;
+    height: 145vh;
+    background: rgb(27, 27, 27, .7);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    max-width: 1647px;
+    min-width: 1500px;
+}
+   
+
+/**Elementos de la tienda*/
+
+.guilty-tienda .guilty-tienda-main .guilty-tienda-element{
+    width: 31%;
+    height: 70vh;
+    background: rgb(211, 210, 210, .8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.guilty-tienda-element .guilty-tienda-img{
+    width: 100%;
+    height: 55%;
+    overflow: hidden;
+}
+
+.guilty-tienda-element .guilty-tienda-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.guilty-tienda-element .guilty-tienda-title{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.guilty-tienda-element .guilty-tienda-title h2{
+   color: black;
+   font-family: "Bebas Neue", sans-serif;
+   font-weight: 800;
+   font-size: 2.3rem;
+}
+
+.guilty-tienda-element .guilty-tienda-description{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0px 15px;
+}
+
+.guilty-tienda-element .guilty-tienda-description p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.guilty-tienda-element .guilty-tienda-precio{
+    width: 100%;
+    height: 5%;
+    display: flex;
+    padding: 0px 15px;
+}
+
+.guilty-tienda-element .guilty-tienda-precio p{
+    font-size: 2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 500;
+}
+
+.guilty-tienda-element .guilty-tienda-carrito{
+    width: 90%;
+    height: 7%; 
+    border-radius: 40px;
+    background: black;
+    transition: .2s ease-in-out;
+}
+
+.guilty-tienda-element .guilty-tienda-carrito:hover{
+    background: rgb(179, 37, 37);
+}
+
+.guilty-tienda-element .guilty-tienda-carrito a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    transition: .2s ease-in-out;
+}
+
+.guilty-tienda-element .guilty-tienda-carrito:hover a{
+    letter-spacing: .2px;
+}
+
+/**Controlando los elementos de los carácteres*/
+
+.guilty-tienda-characters{
+    width: 97%;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1647px;
+    min-width: 1500px;
+    max-height: 295px;
+}
+
+.guilty-tienda-characters .characters-general-title{
+    width: 100%;
+    background-color: black;
+}
+
+.characters-general-title h2{
+    color: white;
+    text-align: center;
+    font-size: 2.1em;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 600;
+}
+
+.guilty-tienda .guilty-tienda-characters .character-thumbnailz{
+    width: 100%;
+    height: auto;
+    background: rgb(27, 27, 27, .7);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 15px 0px;
+    gap: 20px;
+
+}
+
+.guilty-tienda .guilty-tienda-characters .guilty-characters-elements{
+    width: 15%;
+    background-color: rgb(189, 189, 189, .2);
+    overflow: hidden;
+    transition: .2s ease-in-out;
+    border-radius: 13px;
+    height: 250px;
+}
+
+.guilty-tienda .guilty-tienda-characters .guilty-characters-elements:hover{
+    border: solid 2px rgb(63, 94, 236);
+}
+
+
+.guilty-tienda .guilty-tienda-characters .guilty-characters-elements img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    transform: scale(1.1);
+    transition: .2s ease-in-out;
+}
+
+.guilty-tienda .guilty-tienda-characters .guilty-characters-elements:hover img{
+    transform: scale(1);
+}
+
+
+
+
+
+/**@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+/**Modal del carrito*/
+
+/**El cuerpo lo cambiamos a overlflow hidden cuando triggereamos el modal*/
+body.modal-open {
+    overflow: hidden;
+}
+
+
+.modal-carrito {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.modal-carrito.isActive{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: fixed;
+    background-color: rgb(7, 7, 7, .4);
+    top: 0;
+    justify-content: right;
+    backdrop-filter: blur(8.5px);
+    z-index: 20;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-carrito .carrito{
+    width: 32%;
+    height: 100%;
+    background-color: rgba(243, 239, 239, 0.9);
+    padding: 10px 20px;
+    max-width: 560px;
+    min-width: 530px;
+}
+
+
+
+/**Carrito vacío*/
+
+.empty-cart-text{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+
+
+
+/**Dando forma al modal*/
+
+.confirmacion-compra{
+    width: 100%;
+    height: 30%;
+}
+
+.confirmacion-compra .confirmacion-titulo{
+    display: flex;
+    width: 100%;
+    height: 15%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.confirmacion-compra .confirmacion-titulo h2{
+    font-size: 2.2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.confirmacion-compra .confirmacion-titulo .bi-x-lg{
+    font-size: 1.7em;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+
+
+.confirmacion-compra .confirmacion-precio{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.subtotal-line, .descuento-line, .total-line{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 200;
+}
+
+
+
+.confirmacion-compra .confirmar-compra{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.confirmar-compra .finish{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    cursor: pointer;
+    background-image: linear-gradient(120deg, #0072ce);
+    border: none;
+    color: white;
+    font-size: 1.1em;
+    transition: .2s ease-in-out;
+}
+
+.confirmar-compra .finish:hover{
+    background-image: linear-gradient(120deg, #127dd4, #338cd4, #1a82d8 );
+}
+
+
+.confirmacion-precio .ingresar-descuento{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+    justify-content: space-evenly;
+}
+
+.ingresar-descuento .descuento-input{
+    width: 100%;
+    height: 65%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ingresar-descuento input{
+    width: 85%;
+    height: 43%;
+    background-color: rgb(190, 188, 188);
+    border-radius: 20px;
+    border: none;
+    padding-left: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 1.05em;
+}
+
+.ingresar-descuento input:focus {
+  outline: none; 
+  border: 2px solid #0072ce;
+}
+
+.ingresar-descuento p{
+    font-size: 1.1em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 200;
+}
+
+.ingresar-descuento button{
+    background-color: #0072ce;
+    cursor: pointer;
+    padding: 7px 20px;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    opacity: .6;
+    transition: .2s ease-in-out;
+}
+
+.ingresar-descuento button:hover{
+    opacity: 1;
+}
+
+
+
+/**Resumen de la compra, titulo, precio, etc*/
+.informacion-compra{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+.informacion-titulo{
+    width: 100%;
+    height: 5%;
+}
+
+.informacion-titulo h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2.2em;
+}
+
+.informacion-compra-elemento{
+    width: 100%;
+    height: 24%;
+    display: flex;
+    background-color: rgb(237, 230, 230);
+    box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/**imagen dentro del resumen de compra*/
+.informacion-compra-elemento .elemento-img{
+    width: 40%;
+    height: 100%;
+}
+
+.elemento-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.informacion-compra-elemento .descripcion-elemento{
+    width: 60%;
+    height: 100%;
+    padding: 0px 10px;
+}
+
+
+
+
+
+/**Título de la compra*/
+
+.descripcion-elemento .elemento-title, 
+.descripcion-elemento .elemento-precio{
+    width: 100%;
+    height: 15%;
+}
+
+.elemento-title  h2{
+    font-size: 1.7em;
+    font-weight: 500;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.descripcion-elemento .elemento-precio p{
+    font-size: 1.7em;
+    font-weight: 500;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+
+
+/**El boton de borrar*/
+
+.descripcion-elemento .elemento-btn-borrar{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.descripcion-elemento .elemento-btn-borrar button{
+    border: none;
+    background: none;
+}
+
+.elemento-btn-borrar .eliminar-producto .bi-trash3{
+    font-size: 4em;
+    color: #0072ce;
+}
+
+.eliminar-producto{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**ESRB PERO DEL CARRITO*/
+
+.elemento-esrb-carrito{
+    width: 100%;
+    height: 30%; 
+    display: flex;
+}
+
+
+.elemento-esrb-carrito .esrb-img-carrito{
+    width: 15%;
+    height: 100%;
+}
+
+.elemento-esrb-carrito  .esrb-img-carrito img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.esrb-text-carrito{
+    width: 85%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 5px 5px;
+}
+
+.esrb-text-carrito p{
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: .7em;
+}
+
+.esrb-text-carrito p:first-child{
+    border-bottom: solid 1px rgba(0, 0, 0, 0.7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+/**Container del footer*/
+.web-container-buy-container{
+    width: 100%;
+    height: auto; /**Ojo acá que capaz da problemas*/
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: linear-gradient(300deg, black, rgb(20, 2, 2), black);
+    align-items: center;
+    position: relative;
+}
+
+
+.web-container-buy-container>.footer-text{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+
+
+/**Socials*/
+
+.publishers{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.socials{
+    display: flex;
+}
+
+.socials>.bi{
+    color: white;
+    font-size: 3rem;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+
+/**Container publishers dentro del footer*/
+
+.publishers-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.publishers-title>h1{
+    font-size: 1.7rem;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.publishers-title>hr{
+    width: 50px;
+    height: 1px;
+}
+
+.publishers-list dt, .publishers-list dd {
+    text-align: center;
+}
+
+.publishers-legal{
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**Texto de error que traemos del session storage*/
+.warning{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 1.1em;
+    font-weight: 400;
+    color: rgb(230, 23, 23);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

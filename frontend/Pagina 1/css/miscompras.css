@@ -1,0 +1,763 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    background-color: black;
+}
+
+/**@@@@@@@@@@@@@@@@@*/
+/**Navbar de la store completa, difernete al original*/
+.main-container{
+    height: auto;
+    width: 100%;
+    background-color: black;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.navbar{
+    width: 100%;
+    height: 3.3vh;
+    background: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar .nav-left{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 25%;
+    max-width: 420px;
+    min-width: 410px;
+}
+
+.nav-index, .nav-xbox, .nav-ps5, .nav-pc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 70%;
+    border-right: solid 1px rgb(238, 233, 233, .5);
+}
+
+.navbar a{
+    color: white;
+    text-decoration: none;
+}
+
+.navbar .nav-right{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 28%;
+    max-width: 445px;
+    min-width: 410px;
+}
+
+.navbar .carrito-icono{
+    width: 10%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.carrito-icono .carrito-icono-cantidad{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10%;
+    right: -30%;
+    width: 24px;
+    height: 24px;
+    background-color: rgb(151, 26, 26);
+    color: white;
+    border-radius: 50%;
+    font-size: 1.1em;
+    font-family: Arial, Helvetica, sans-serif;
+    pointer-events: none;
+}
+
+.navbar .carrito-icono .bi-cart{
+    color: white;
+    font-size: 1.7em;
+}
+
+.nav-right .nav-sign-in{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 65%;
+    text-transform: uppercase;
+    background-color: rgb(151, 26, 26);
+    position: relative;
+    z-index: 10;
+    min-width: 130px;
+}
+
+.nav-right .nav-shop-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 65%;
+    text-transform: uppercase;
+}
+
+.navbar a{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    transition: .2s ease-in-out;
+}
+
+.navbar .nav-sign-in a{
+    width: 100%;
+    text-align: center;
+}
+
+/**Dropdown del nombre*/
+
+.nav-sign-in ul {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 100%;
+    background-image: linear-gradient(120deg, rgb(12, 12, 12), rgb(44, 38, 38), rgb(59, 53, 53), rgb(58, 57, 57));
+    list-style: none;
+    gap: 10px;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.nav-sign-in ul li{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.1em;
+    cursor: pointer;
+    padding: 5px 5px;
+    transition: color .4s ease-in-out;
+}
+
+.nav-sign-in ul li:first-child{
+    border-bottom: 1px solid rgb(216, 215, 215, .6);
+}
+
+.nav-sign-in ul li a{
+    font-size: 1.1em;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    transition: color .4s ease-in-out;
+}
+
+.dropdown li:hover, .dropdown li:hover a{
+    color: red;
+}
+
+
+
+
+/**@@@@@@@@@@@@@@@@@*/
+/** Navbar inferior de las 3 opciones */
+.navbar-bottom-options{
+    display: flex;
+    height: 4vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background: rgb(255, 255, 255);
+}
+
+.navbar-bottom-options a{
+    color: black;
+    text-decoration: none;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    transition: .25s ease-in-out;
+}
+
+
+.nav-story:hover a{
+    color: red;
+}
+
+/**@@@@@@@@@@@@@@@@@*/
+/**STYLOS PARA EL NAVBAR.*/
+.navbar .nav-left a:hover{
+    color: rgb(255, 6, 6);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**@@@@@@@@@@@@@@@@@*/
+/**GRID.*/
+
+
+
+.display-compras {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr 3fr; /* Name wider */
+  gap: 10px 20px;
+  max-width: 700px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+.grid-header {
+  font-weight: bold;
+  border-bottom: 2px solid #333;
+  padding-bottom: 8px;
+  color: white;
+}
+
+.display-compras > div:not(.grid-header) {
+  padding: 8px 0;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+/**@@@@Button PARA EL PDF*/
+
+
+.data-container{
+    padding-top: 40px;
+    width: auto;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    overflow: auto;
+    gap: 20px;
+}
+
+#downloadPdfBtn{
+    background-color: #127dd4;
+    color: white;
+    border: solid 1px rgb(230, 230, 230, .5);
+    padding: 10px 30px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+/**Container del footer*/
+.web-container-buy-container{
+    width: 100%;
+    height: auto; /**Ojo acá que capaz da problemas*/
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: linear-gradient(300deg, black, rgb(20, 2, 2), black);
+    align-items: center;
+    position: relative;
+}
+
+
+.web-container-buy-container>.footer-text{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+
+
+/**Socials*/
+
+.publishers{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.socials{
+    display: flex;
+}
+
+.socials>.bi{
+    color: white;
+    font-size: 3rem;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+
+/**Container publishers dentro del footer*/
+
+.publishers-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.publishers-title>h1{
+    font-size: 1.7rem;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.publishers-title>hr{
+    width: 50px;
+    height: 1px;
+}
+
+.publishers-list dt, .publishers-list dd {
+    text-align: center;
+}
+
+.publishers-legal{
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/**@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+/**Modal del carrito*/
+
+/**El cuerpo lo cambiamos a overlflow hidden cuando triggereamos el modal*/
+body.modal-open {
+    overflow: hidden;
+}
+
+
+.modal-carrito {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.modal-carrito.isActive{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: fixed;
+    background-color: rgb(7, 7, 7, .4);
+    top: 0;
+    justify-content: right;
+    backdrop-filter: blur(8.5px);
+    z-index: 20;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-carrito .carrito{
+    width: 32%;
+    height: 100%;
+    background-color: rgba(243, 239, 239, 0.9);
+    padding: 10px 20px;
+    max-width: 560px;
+    min-width: 530px;
+}
+
+
+
+/**Dando forma al modal*/
+
+.confirmacion-compra{
+    width: 100%;
+    height: 30%;
+}
+
+.confirmacion-compra .confirmacion-titulo{
+    display: flex;
+    width: 100%;
+    height: 15%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.confirmacion-compra .confirmacion-titulo h2{
+    font-size: 2.2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.confirmacion-compra .confirmacion-titulo .bi-x-lg{
+    font-size: 1.7em;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+
+
+.confirmacion-compra .confirmacion-precio{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.subtotal-line, .descuento-line, .total-line{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 200;
+}
+
+
+
+.confirmacion-compra .confirmar-compra{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.confirmar-compra .finish{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    cursor: pointer;
+    background-image: linear-gradient(120deg, #0072ce);
+    border: none;
+    color: white;
+    font-size: 1.1em;
+    transition: .2s ease-in-out;
+}
+
+.confirmar-compra .finish:hover{
+    background-image: linear-gradient(120deg, #127dd4, #338cd4, #1a82d8 );
+}
+
+
+.confirmacion-precio .ingresar-descuento{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+    justify-content: space-evenly;
+}
+
+.ingresar-descuento .descuento-input{
+    width: 100%;
+    height: 65%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ingresar-descuento input{
+    width: 85%;
+    height: 43%;
+    background-color: rgb(190, 188, 188);
+    border-radius: 20px;
+    border: none;
+    padding-left: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 1.05em;
+}
+
+.ingresar-descuento input:focus {
+  outline: none; 
+  border: 2px solid #0072ce;
+}
+
+.ingresar-descuento p{
+    font-size: 1.1em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 200;
+}
+
+.ingresar-descuento button{
+    background-color: #0072ce;
+    cursor: pointer;
+    padding: 7px 20px;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    opacity: .6;
+    transition: .2s ease-in-out;
+}
+
+.ingresar-descuento button:hover{
+    opacity: 1;
+}
+
+
+
+/**Resuemn de la compra, titulo, precio, etc*/
+.informacion-compra{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+.informacion-titulo{
+    width: 100%;
+    height: 5%;
+}
+
+.informacion-titulo h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2.2em;
+}
+
+.informacion-compra-elemento{
+    width: 100%;
+    height: 24%;
+    display: flex;
+    background-color: rgb(237, 230, 230);
+    box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/**imagen dentro del resumen de compra*/
+.informacion-compra-elemento .elemento-img{
+    width: 40%;
+    height: 100%;
+}
+
+.elemento-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.informacion-compra-elemento .descripcion-elemento{
+    width: 60%;
+    height: 100%;
+    padding: 0px 10px;
+}
+
+
+
+
+
+/**Título de la compra*/
+
+.descripcion-elemento .elemento-title, 
+.descripcion-elemento .elemento-precio{
+    width: 100%;
+    height: 15%;
+}
+
+.elemento-title  h2{
+    font-size: 1.7em;
+    font-weight: 500;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.descripcion-elemento .elemento-precio p{
+    font-size: 1.7em;
+    font-weight: 500;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+
+
+/**El boton de borrar*/
+
+.descripcion-elemento .elemento-btn-borrar{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.descripcion-elemento .elemento-btn-borrar button{
+    border: none;
+    background: none;
+}
+
+.elemento-btn-borrar .eliminar-producto .bi-trash3{
+    font-size: 4em;
+    color: #0072ce;
+}
+
+.eliminar-producto{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+
+
+
+
+
+/**Carrito vacío*/
+
+.empty-cart-text{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+
+
+
+
+
+
+
+/**ESRB PERO DEL CARRITO*/
+
+.elemento-esrb-carrito{
+    width: 100%;
+    height: 30%; 
+    display: flex;
+}
+
+
+.elemento-esrb-carrito .esrb-img-carrito{
+    width: 15%;
+    height: 100%;
+}
+
+.elemento-esrb-carrito  .esrb-img-carrito img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.esrb-text-carrito{
+    width: 85%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 5px 5px;
+}
+
+.esrb-text-carrito p{
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: .7em;
+}
+
+.esrb-text-carrito p:first-child{
+    border-bottom: solid 1px rgba(0, 0, 0, 0.7);
+}

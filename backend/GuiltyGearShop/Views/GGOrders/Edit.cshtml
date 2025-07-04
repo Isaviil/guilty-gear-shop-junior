@@ -1,0 +1,72 @@
+﻿@model LAYER_ENTITY.GuiltyGearOrders
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit Order</h1>
+
+<h4>GuiltyGearOrders</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PurchaseID" class="control-label"></label>
+                <input asp-for="PurchaseID" class="form-control" readonly/>
+                <span asp-validation-for="PurchaseID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserID" class="control-label"></label>
+                <input asp-for="UserID" class="form-control" readonly/>
+                <span asp-validation-for="UserID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductID" class="control-label"></label>
+                <input asp-for="ProductID" class="form-control" readonly/>
+                <span asp-validation-for="ProductID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductName" class="control-label"></label>
+                <input asp-for="ProductName" class="form-control" />
+                <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Purchase_Price" class="control-label"></label>
+                <input asp-for="Purchase_Price" class="form-control" />
+                <span asp-validation-for="Purchase_Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ELIMINADO" class="control-label"></label>
+                <select asp-for="ELIMINADO" class="form-control">
+                    <option value="NO">NO</option>
+                    <option value="SI">SI</option>
+                </select>
+                <span asp-validation-for="ELIMINADO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                
+                <select asp-for="Status" class="form-control">
+                    <option value="Pending">Pending</option>
+                    <option value="Processing">Processing</option>
+                    <option value="Finished">Finished</option>
+                </select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

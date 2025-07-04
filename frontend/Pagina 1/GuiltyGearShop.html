@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUILTY GEAR -STRIVE-</title>
+    <script src="js/arrayData.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="css/guiltygearshop.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="js/guiltygearshop.js" defer></script>
+    <script src="js/carritoFetch.js" defer></script>
+    <script src="js/gsp.js" defer></script>
+</head>
+<body>
+    
+    <div class="main-container">
+
+        <nav class="navbar">
+            <div class="nav-left">
+                <div class="nav-index"><a href="#">INDICE</a></div>
+                <div class="nav-pc"><a href="#">PC</a></div>
+                
+            </div>
+
+            <div class="nav-right">
+               <!--Completado con JS-->
+            </div>
+        </nav>
+
+        <nav class="navbar-bottom-options">
+            <div class="nav-story"><a href="https://www.guiltygear.com/ggst/en/story/">Comic Web</a></div>
+            <div class="nav-story"><a href="https://www.guiltygear.com/ggst/en/about/">Sobre GGST</a></div>
+            <div class="nav-story"><a href="https://www.guiltygear.com  /ggst/en/news/post-951/">Preguntas Frecuentes</a></div>
+        </nav>
+
+        <section class="guiltyHero">
+
+            <div class="guiltyHero-video">
+                <div class="fading-gradient"></div>
+                <video src="videos/Smellofthegameclip.webm" autoplay muted loop></video>
+                <!--Texto del video-->
+                    <div class="guiltyHero-text">
+
+
+                    </div>
+            </div>
+
+            <div class="flechitas">   
+                <i class="bi bi-chevron-left"></i>             
+                <i class="bi bi-chevron-right"></i>
+            </div> 
+
+            <div class="guiltyHero-carousel">
+
+            </div> 
+
+
+        </section>
+
+        <section class="guilty-tienda">
+
+            <div class="guilty-tienda-main">
+                <!--React-->    
+            </div>
+
+            <div class="guilty-tienda-characters">
+
+                <div class="characters-general-title">
+                    <h2>DLC - Personajes</h2>
+                </div>
+
+                <div class="character-thumbnailz">
+   
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+     <footer class="web-container-buy-container">
+            <div class="footer-text">
+
+                <div class="socials">
+                    <i class="bi bi-facebook"></i>
+                    <i class="bi bi-twitter-x"></i>
+                </div>
+
+                <div class="publishers">
+                    <div class="publishers-title">
+                        <hr class="dividier">
+                        <h1>Publishers</h1>
+                        <hr class="dividier">
+                    </div>
+
+                    <div class="publishers-list">
+                        <!--Las DL son más ordenadas que la <UL>-->
+                        <dl> <!--definition list-->
+                            <dt>Japan & Korea</dt> <!--Definition term-->
+                            <dd>ARC SYSTEM WORKS</dd> <!--Definition data-->
+
+                            <dt>North America</dt>
+                            <dd>Arc System Works America</dd>
+
+                            <dt>EU + EMEA + ANZ + Central and South Asia</dt>
+                            <dd>BANDAI NAMCO Entertainment Europe</dd>
+
+                            <dt>Rest of East Asia + South East Asia</dt>
+                            <dd>BANDAI NAMCO Entertainment Asia</dd>
+                        </dl>                        
+                    </div>
+
+                    <div class="publisher-plataformas">
+                        <img src="img/publishers.png" alt="">
+                    </div>
+
+                    <div class="publishers-legal">
+                        <p>"PlayStation" and “PS5” are registered trademarks or trademarks of Sony Interactive Entertainment Inc.</p>
+                        <p>©2020 Valve Corporation. Steam and the Steam logo are trademarks and/or registered trademarks of Valve Corporation in the U.S. and/or other countries.</p>
+                        <p>Microsoft, the Xbox Sphere mark, the Xbox One logo, Series X|S logo, Xbox One, Xbox Series X, Xbox Series S, Xbox Series X|S and Xbox Game Pass are trademarks of the Microsoft group of companies.</p>
+                    </div>
+
+                </div>
+            </div>
+
+     </footer>
+
+
+    <div class="modal-carrito"> 
+
+        <div class="carrito">
+            
+            <div class="confirmacion-compra">
+                <!--Está en JS-->
+            </div>
+
+            <div class="informacion-compra">
+
+                <!--Está en JS-->
+        
+            </div>
+
+        </div>            
+
+    </div>
+
+    </div>
+
+
+    <!--GSAP-->
+
+     <!--*This script is needed to animate gsap.timeline()-->
+     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+     <!--**********************************-->
+
+    <!--*This script is needed for the scrollTrigger-->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <!--**********************************-->
+    
+    <!--GSAP END-->
+</body>
+</html>

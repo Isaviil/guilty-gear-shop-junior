@@ -1,0 +1,106 @@
+﻿@model IEnumerable<LAYER_ENTITY.GuiltyGearProducts>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@if (ViewBag.errorMessage != null)
+{
+    <div class="alert alert-info">
+        <h4><strong> @ViewBag.errorMessage </strong></h4>
+    </div>
+}
+
+<h1> Guilty Gear Game & DLC  </h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-danger">Create New</a> 
+</p>
+
+<form asp-action="Index" method="get" class="d-flex align-items-center gap-2">
+    Product ID:   
+    <input type="text" name="cod" class="form-control w-auto" />
+    <button class="btn btn-primary">Check</button>
+</form>
+
+<br />
+
+<form asp-action="Index" method="get" class="d-flex align-items-center gap-2">
+    Choose Platform: 
+    @Html.DropDownList("platform", (SelectList)ViewBag.platform, "Select Platform", new { @class = "form-control w-auto" })
+    <button type="submit" class="btn btn-primary">Filter</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Platform)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Edition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ELIMINADO)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Platform)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Edition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ELIMINADO)
+            </td>
+            <td>
+               
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ProductID }, new { @class = "btn btn-warning btn-sm" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ProductID }, new { @class = "btn btn-info btn-sm" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ProductID }, new { @class = "btn btn-danger btn-sm" })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

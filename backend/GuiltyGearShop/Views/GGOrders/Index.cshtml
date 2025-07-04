@@ -1,0 +1,65 @@
+﻿@model IEnumerable<LAYER_ENTITY.GuiltyGearOrders>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista de órdenes</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-danger">Crear</a>
+</p>
+
+<form asp-action="Index" method="get" class="d-flex align-content-center gap-2">
+
+    <label for="searchInput"> Buscar Orden </label>
+    <input type="text" name="searchInput" class="form-control w-auto" placeholder="PurchaseID or OrderID "/>
+    <button type="submit" class="btn btn-primary"> Buscar </button>
+</form>
+
+<br />
+
+<form asp-action="MarkAsFinished" method="post">
+   
+    <button type="submit" class="btn btn-success">Marcar como completado</button>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Select</th>
+                <th>@Html.DisplayNameFor(model => model.PurchaseID)</th>
+                <th>@Html.DisplayNameFor(model => model.UserID)</th>
+                <th>@Html.DisplayNameFor(model => model.ProductID)</th>
+                <th>@Html.DisplayNameFor(model => model.ProductName)</th>
+                <th>@Html.DisplayNameFor(model => model.Purchase_Price)</th>
+                <th>@Html.DisplayNameFor(model => model.ELIMINADO)</th>
+                <th>@Html.DisplayNameFor(model => model.Status)</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <input type="checkbox" name="selectedOrders" value="@item.PurchaseID" />
+                    </td>
+                    <td>@Html.DisplayFor(modelItem => item.PurchaseID)</td>
+                    <td>@Html.DisplayFor(modelItem => item.UserID)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ProductID)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ProductName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Purchase_Price)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ELIMINADO)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                    <td>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.PurchaseID }, new {@class="btn btn-danger btn-sm"}) |
+                        @Html.ActionLink("Detalles", "Details", new { id = item.PurchaseID }, new { @class = "btn btn-warning btn-sm" }) |
+                        @Html.ActionLink("Borrar", "Delete", new { id = item.PurchaseID }, new { @class = "btn btn-secondary btn-sm" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+   
+</form>
