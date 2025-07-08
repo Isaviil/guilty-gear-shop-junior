@@ -1,7 +1,7 @@
 # Guilty Gear Strive Inspired Online Store
 
 **Aspiring Developer:** Isaac V.
-**Academic Individual Project**
+**Personal Project**
 
 ---
 
@@ -74,6 +74,6 @@ Thanks to [DatCravat](https://www.datcravat.com) for providing images used in th
 
 ## Disclaimer
 
-This project is purely for educational purposes as part of an academic practice.  
+This project is purely for educational purposes as part of a personal practice.  
 All Guilty Gear characters, logos, images, and visual elements belong to Arc System Works.  
 No commercial gain or copyright infringement intended.
