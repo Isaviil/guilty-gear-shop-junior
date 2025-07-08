@@ -31,13 +31,13 @@
      const ordersResponse = await fetch(`http://localhost:5172/api/GGFrontEnd/getOrders/${user.userID}`);
 
       if (ordersResponse.ok){
-        //Traemos el objeto
+        
         const orders = await ordersResponse.json();
 
-        //Extraemos solo el id
+        
         const ordersID = orders.map(x => x.productID)
 
-        //Enviamos al session storage solo el id al loguear
+        
         sessionStorage.setItem("orderID", JSON.stringify(ordersID))
       }
 

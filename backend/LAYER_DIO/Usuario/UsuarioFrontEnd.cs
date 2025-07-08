@@ -7,7 +7,9 @@ using Microsoft.Extensions.Configuration;  // For IConfiguration
 using System.Data;                       // For CommandType, DataTable, etc.
 using Microsoft.Data.SqlClient;             // For SqlConnection, SqlCommand
 using System.Collections.Generic;
-using LAYER_ENTITY;         // For Dictionary<>
+using LAYER_ENTITY;
+using LAYER_HELPERS;
+using Microsoft.IdentityModel.Abstractions;         // For Dictionary<>
 
 
 namespace LAYER_DIO.Usuario
@@ -104,12 +106,14 @@ namespace LAYER_DIO.Usuario
             try
             {
 
+                string hashedPassword = SecurityHelper.HashPassword(password);
+
                 string cadena = "SELECT * FROM GuiltyGear_User WHERE Email=@email AND Password=@password AND ELIMINADO = 'NO'";
 
                 var parametros = new Dictionary<string, object>
                 {
                     {"@email", email},
-                    {"@password", password}
+                    {"@password", hashedPassword}
                 };
 
                 DataTable dt = _dao.ExecuteQueryRaw(cadena, parametros);

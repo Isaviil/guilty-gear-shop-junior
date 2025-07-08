@@ -11,8 +11,7 @@
 }
 
 
-/**@@@@@@@@@@@@@@@@@*/
-/**Navbar de la store completa, difernete al original*/
+/**Navbar*/
 .main-container{
     height: auto;
     width: 100%;
@@ -132,7 +131,7 @@
     text-align: center;
 }
 
-/**Dropdown del nombre*/
+/*Dropdown*/
 
 .nav-sign-in ul {
     position: absolute;
@@ -183,8 +182,7 @@
 
 
 
-/**@@@@@@@@@@@@@@@@@*/
-/** Navbar inferior de las 3 opciones */
+/* Bottom nav */
 .navbar-bottom-options{
     display: flex;
     height: 4vh;
@@ -210,16 +208,16 @@
     color: red;
 }
 
-/**@@@@@@@@@@@@@@@@@*/
-/**STYLOS PARA EL NAVBAR.*/
+
+/*Nav hover.*/
 .navbar .nav-left a:hover{
     color: rgb(255, 6, 6);
 }
 
 
 
-/**@@@@@@@@@@@@@@@@@*/
-/** CSS DEL VIDEO Y CARRUSEL DE LA TIENDA */
+
+/* CSS Video and carousel */
 
 .guiltyHero{
     width: 100%;
@@ -243,7 +241,7 @@
 }
 
 
-/**CSS DEL TEXTO DENTRO DEL VIDEO*/
+/**CSS Video Text*/
 .guiltyHero .guiltyHero-text{
     position: absolute;
     height: 40%;
@@ -254,6 +252,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    font-size: 1.4em;
+    max-width: 1342px;
 }
 
 .guiltyHero-text span{
@@ -310,7 +310,7 @@
 
 
 
-/**CSS DEL OVERLAY DEL VIDEO*/
+/*CSS VIDEO OVERLAY*/
 
 .guiltyHero .guiltyHero-video .fading-gradient{
     background-image: linear-gradient(
@@ -330,7 +330,7 @@
 
 
 
-/**CSS DEL MINI CAROUSEL*/
+/*CSS MINI CAROUSEL*/
 .guiltyHero .guiltyHero-carousel{
     height: 35vh;
     background-color: rgb(0, 0, 0);
@@ -387,7 +387,7 @@
     object-fit: cover;
 }
 
-/**Flechitas*/
+/*arrows*/
 
 .flechitas{
     width: 100%;
@@ -429,7 +429,7 @@
 
 
 
-/**CONTENEDOR QUE MOSTRAR LOS SEASON PASS*/
+
 .guilty-tienda{
     width: 100%;
     height: auto;
@@ -445,7 +445,7 @@
     gap: 90px;
 }
 
-/**CONTENEDOR EN EL QUE MOSTRAMOS LOS SEASON PASS/PJS - TOCA AGREGAR KEY*/
+
 
 .guilty-tienda .guilty-tienda-main{
     width: 97%;
@@ -460,7 +460,7 @@
 }
    
 
-/**Elementos de la tienda*/
+/**shopping elements*/
 
 .guilty-tienda .guilty-tienda-main .guilty-tienda-element{
     width: 31%;
@@ -559,7 +559,7 @@
     letter-spacing: .2px;
 }
 
-/**Controlando los elementos de los carácteres*/
+/**Additinal characters*/
 
 .guilty-tienda-characters{
     width: 97%;
@@ -630,10 +630,10 @@
 
 
 
-/**@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
-/**Modal del carrito*/
 
-/**El cuerpo lo cambiamos a overlflow hidden cuando triggereamos el modal*/
+/**Modal shopping cart*/
+
+/**Hide the overflow to avoid scrolling*/
 body.modal-open {
     overflow: hidden;
 }
@@ -673,7 +673,7 @@ body.modal-open {
 
 
 
-/**Carrito vacío*/
+/**Empty cart*/
 
 .empty-cart-text{
     width: 100%;
@@ -689,7 +689,7 @@ body.modal-open {
 
 
 
-/**Dando forma al modal*/
+/**Shaping the modal*/
 
 .confirmacion-compra{
     width: 100%;
@@ -821,7 +821,7 @@ body.modal-open {
 
 
 
-/**Resumen de la compra, titulo, precio, etc*/
+/**purchase summary*/
 .informacion-compra{
     width: 100%;
     height: 70%;
@@ -850,7 +850,7 @@ body.modal-open {
 }
 
 
-/**imagen dentro del resumen de compra*/
+/**shoping cart img*/
 .informacion-compra-elemento .elemento-img{
     width: 40%;
     height: 100%;
@@ -872,7 +872,7 @@ body.modal-open {
 
 
 
-/**Título de la compra*/
+/**Title element*/
 
 .descripcion-elemento .elemento-title, 
 .descripcion-elemento .elemento-precio{
@@ -894,7 +894,7 @@ body.modal-open {
 
 
 
-/**El boton de borrar*/
+/*Delete btn*/
 
 .descripcion-elemento .elemento-btn-borrar{
     width: 100%;
@@ -936,7 +936,7 @@ body.modal-open {
 
 
 
-/**ESRB PERO DEL CARRITO*/
+/**ESRB - Cart*/
 
 .elemento-esrb-carrito{
     width: 100%;
@@ -989,11 +989,11 @@ body.modal-open {
 
 
 
-/**@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
-/**Container del footer*/
+
+/*footer*/
 .web-container-buy-container{
     width: 100%;
-    height: auto; /**Ojo acá que capaz da problemas*/
+    height: auto;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -1039,7 +1039,7 @@ body.modal-open {
     cursor: pointer;
 }
 
-/**Container publishers dentro del footer*/
+/**Container publishers footer*/
 
 .publishers-title{
     display: flex;
@@ -1080,7 +1080,7 @@ body.modal-open {
 
 
 
-/**Texto de error que traemos del session storage*/
+/* error text*/
 .warning{
     width: 100%;
     display: flex;
@@ -1088,5 +1088,89 @@ body.modal-open {
     font-size: 1.1em;
     font-weight: 400;
     color: rgb(230, 23, 23);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**Modal thank-you*/
+.modal-thank-you{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /*cambiará a 1*/
+    pointer-events: none; /*cambiará a "auto"*/
+    background: rgb(7, 7, 7, .3);
+    z-index: 100;
+}
+
+.modal-thank-you .ty-container{
+    width: 51%;
+    height: 40%;
+    background: rgb(0, 0, 0, .6);
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    min-width: 1150px;
+}
+
+.ty-container .thank-you-img{
+    width: 100%;
+    height: 70%;
+}
+
+.thank-you-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ty-container .thank-you-text{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.thank-you-text a{
+    color: rgb(202, 186, 93);
+    text-decoration: none;
+    font-weight: 600;
+    transition: .4s ease-in-out;
+}
+
+.thank-you-text a:hover{
+    color: rgb(243, 187, 68);
+}
+
+.thank-you-text h2{
+    color: white;
+    font-family: 'Bebas neue';
+    font-size: clamp(5em, 4vw, 6em);
+}
+
+.thank-you-text p{
+    color: white;
+    font-size: 1.6em;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

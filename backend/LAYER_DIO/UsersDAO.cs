@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using LAYER_ENTITY;
 using LAYER_HELPERS;
+using Microsoft.Data.SqlClient;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 namespace LAYER_DIO
@@ -18,6 +20,36 @@ namespace LAYER_DIO
         {
             _dao = dao;
         }
+
+        //No duplicates
+        public Dictionary<string, string> ValidateDuplicates(string email, string phone)
+        {
+            var errors = new Dictionary<string, string>();
+
+            var query = "SELECT Email, Phone FROM GuiltyGear_user WHERE Email = @Email OR Phone = @Phone";
+            var parameters = new Dictionary<string, object>
+            {
+                {"@Email", email},
+                {"@Phone", phone}
+            };
+
+            var table = _dao.ExecuteQueryRaw(query, parameters);
+
+            if (table.Rows.Count > 0)
+            {
+                foreach (DataRow row in table.Rows)
+                {
+                    if (row["Email"].ToString() == email)
+                        errors["email"] = "Este correo ya está registrado";
+
+                    if (row["Phone"].ToString() == phone)
+                        errors["phone"] = "Este número ya está registrado";
+                }
+            }
+
+            return errors;
+        }
+
 
         public string AddUser(GuiltyGearUsers u)
         {
@@ -35,9 +67,13 @@ namespace LAYER_DIO
                 _dao.ExecuteNonquery("DBO.AddDataUser", parametros);
                 return "Usuario creado satisfactoriamente";
             }
+            catch (SqlException ex)
+            {
+                throw new Exception("Error de base de datos: " + ex.Message);
+            }
             catch(Exception ex) 
             {
-                throw new Exception("Error al agregar: " + ex.Message);
+                throw new Exception("error general: " + ex.Message);
             }
         }
 
@@ -59,13 +95,11 @@ namespace LAYER_DIO
         }
 
 
-       
-
         public string UpdateUser(GuiltyGearUsers gg)
         {
             try
             {
-                
+                //Analizar este codigo
                 var passwordParam = string.IsNullOrEmpty(gg.Password) ? 
                     (object)DBNull.Value : SecurityHelper.HashPassword(gg.Password);
 
@@ -74,10 +108,10 @@ namespace LAYER_DIO
                     {"@UserID", gg.UserID},
                     {"@Name", gg.Name},
                     {"@LastName", gg.LastName},
-                    {"@Email", gg.Email},            
+                    {"@Email", gg.Email},
                     {"@Password", passwordParam},
                     {"@Phone", gg.Phone },
-                    {"@Eliminado", gg.ELIMINADO} //Porque queremos el estado actual, no un default
+                    {"@Eliminado", gg.ELIMINADO} 
                 };
                 _dao.ExecuteNonquery("DBO.UpdateUser", parametros);
                 return "Cliente actualizado correctamente";
@@ -137,7 +171,7 @@ namespace LAYER_DIO
                         Name = dr["Name"].ToString(),
                         LastName = dr["LastName"].ToString(),
                         Email = dr["Email"].ToString(),
-                        
+                        //Password = "**********"
                         Phone = dr["Phone"].ToString(),
                         ELIMINADO = dr["ELIMINADO"].ToString() 
                     });

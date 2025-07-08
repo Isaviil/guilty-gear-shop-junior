@@ -9,8 +9,8 @@
     background-color: black;
 }
 
-/**@@@@@@@@@@@@@@@@@*/
-/**Navbar de la store completa, difernete al original*/
+
+/**Navbar*/
 .main-container{
     height: auto;
     width: 100%;
@@ -135,7 +135,13 @@
     text-align: center;
 }
 
-/**Dropdown del nombre*/
+
+
+
+
+
+
+/*Dropdown after user logs in*/
 
 .nav-sign-in ul {
     position: absolute;
@@ -183,8 +189,8 @@
 
 
 
-/**@@@@@@@@@@@@@@@@@*/
-/** Navbar inferior de las 3 opciones */
+
+/* Navbar inferior de las 3 opciones */
 .navbar-bottom-options{
     display: flex;
     height: 4vh;
@@ -210,8 +216,8 @@
     color: red;
 }
 
-/**@@@@@@@@@@@@@@@@@*/
-/**STYLOS PARA EL NAVBAR.*/
+
+/*Nav hover.*/
 .navbar .nav-left a:hover{
     color: rgb(255, 6, 6);
 }
@@ -229,14 +235,14 @@
 
 
 
-/**@@@@@@@@@@@@@@@@@*/
-/**GRID.*/
+
+/*GRID.*/
 
 
 
 .display-compras {
   display: grid;
-  grid-template-columns: 3fr 1fr 1fr 1fr 3fr; /* Name wider */
+  grid-template-columns: 3fr 1fr 1fr 1fr 3fr; 
   gap: 10px 20px;
   max-width: 700px;
   margin: 20px auto;
@@ -265,7 +271,7 @@
 
 
 
-/**@@@@Button PARA EL PDF*/
+/*Button PARA EL PDF*/
 
 
 .data-container{
@@ -333,8 +339,8 @@
 
 
 
-/**@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
-/**Container del footer*/
+
+/*Container del footer*/
 .web-container-buy-container{
     width: 100%;
     height: auto; /**Ojo acá que capaz da problemas*/
@@ -383,7 +389,7 @@
     cursor: pointer;
 }
 
-/**Container publishers dentro del footer*/
+/*Container publishers*/
 
 .publishers-title{
     display: flex;
@@ -422,10 +428,9 @@
 
 
 
-/**@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
-/**Modal del carrito*/
 
-/**El cuerpo lo cambiamos a overlflow hidden cuando triggereamos el modal*/
+/*Cart modal*/
+
 body.modal-open {
     overflow: hidden;
 }
@@ -465,7 +470,10 @@ body.modal-open {
 
 
 
-/**Dando forma al modal*/
+
+
+
+
 
 .confirmacion-compra{
     width: 100%;
@@ -597,7 +605,7 @@ body.modal-open {
 
 
 
-/**Resuemn de la compra, titulo, precio, etc*/
+/*summary*/
 .informacion-compra{
     width: 100%;
     height: 70%;
@@ -626,7 +634,6 @@ body.modal-open {
 }
 
 
-/**imagen dentro del resumen de compra*/
 .informacion-compra-elemento .elemento-img{
     width: 40%;
     height: 100%;
@@ -648,7 +655,7 @@ body.modal-open {
 
 
 
-/**Título de la compra*/
+/*Puchase title*/
 
 .descripcion-elemento .elemento-title, 
 .descripcion-elemento .elemento-precio{
@@ -670,7 +677,7 @@ body.modal-open {
 
 
 
-/**El boton de borrar*/
+/*delete btn*/
 
 .descripcion-elemento .elemento-btn-borrar{
     width: 100%;
@@ -702,7 +709,7 @@ body.modal-open {
 
 
 
-/**Carrito vacío*/
+/*Empty cart*/
 
 .empty-cart-text{
     width: 100%;
@@ -722,7 +729,7 @@ body.modal-open {
 
 
 
-/**ESRB PERO DEL CARRITO*/
+/*ESRB cart*/
 
 .elemento-esrb-carrito{
     width: 100%;

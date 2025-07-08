@@ -1,4 +1,4 @@
-//targeteamos el grid
+
 const displayContainer = document.querySelector(".display-compras");
 const downloadBtn = document.getElementById("downloadPdfBtn");
 
@@ -6,7 +6,7 @@ async function loadOrders() {
   try {
     const user = JSON.parse(sessionStorage.getItem("user"));
 
-    //*Safeguard por si entran directamente.
+    //*Safeguard
       if (!user || !user.userID) {
 
         alert("Please log in to see your orders.");

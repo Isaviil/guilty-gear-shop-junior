@@ -5,13 +5,13 @@ let shoppingCart = JSON.parse(sessionStorage.getItem("carrito")) || [];
 
 
 
-//*Cambiando el contenido del navbar dependiendo de si tengo mi session storage del usuario.
+
 const user = JSON.parse(sessionStorage.getItem("user"));
 const navRight = document.querySelector(".nav-right");
 
 if (!user || user.userID ===null){
     navRight.innerHTML = `
-    <div class="nav-sign-in"><a href="login.html">SIGN IN</a></div>
+    <div class="nav-sign-in"><a href="login.html">Ingresar</a></div>
     <div class="nav-shop-name"><a href="#">Guilty Gear Store</a></div>
   `;
 } else {
@@ -39,10 +39,10 @@ if (!user || user.userID ===null){
 
 
 
-//*Mostrar el menú desplegable del usuario al hacer clic
+
 const dropdown = document.querySelector(".dropdown")
 
-//*Controla si el menú desplegable del usuario está abierto
+
 let dropdownOpen = false; 
 document.querySelector(".nav-sign-in").addEventListener("click", (e)=>{
 
@@ -52,7 +52,7 @@ document.querySelector(".nav-sign-in").addEventListener("click", (e)=>{
     dropdownOpen = true;
 });
 
-//*Oculta el menú desplegable al hacer clic fuera
+
 window.addEventListener("click", (e) => {
   if (dropdownOpen){
     dropdown.style.opacity = 0;
@@ -61,7 +61,7 @@ window.addEventListener("click", (e) => {
   }
 });
 
-//*Cerrando sesión
+
 
 if (user && document.querySelector("#sign-out")){
     document.querySelector("#sign-out").addEventListener("click", ()=> {
@@ -87,7 +87,7 @@ if (user && document.querySelector("#sign-out")){
 
 
 
-//*Llenamos el contenedor con los datos del session storage
+
 
 if (dataProductos && dataProductos.platforms && dataProductos.platforms.length > 0){
 
@@ -169,7 +169,7 @@ if (dataProductos && dataProductos.platforms && dataProductos.platforms.length >
 
 
 
-//*Checando que el usuario esté logueado antes de enviar a la página del carrito de compras.
+//User logged in?
 //const shoppingCart = JSON.parse(sessionStorage.getItem("carrito")) || []; 
 const btnAgregar = document.querySelector(".guilty-tienda-carrito a")
 
@@ -184,7 +184,7 @@ if (btnAgregar){
         window.location.href = "login.html";
         return;
     } else {        
-       //*Muestra el modal del carrito si el producto fue agregado
+       
         if (!shoppingCart.find(y=> y.id === dataProductos.platforms.find(y=> y.platform === "PC").id)){
             shoppingCart.push({
             title: dataProductos.title,
@@ -215,7 +215,7 @@ if (btnAgregar){
 
 
 
-//*Muestra el modal del carrito al hacer clic en el ícono
+//Cart modal on click
 const btnCarrito = document.querySelector(".carrito-icono")
 
 if (btnCarrito){
@@ -228,7 +228,7 @@ if (btnCarrito){
 
     document.body.classList.add("modal-open");
     document.querySelector(".modal-carrito").classList.add("isActive");
-    
+    gsap.fromTo(".carrito", {x: 200, opacity: 0}, {x:0, duration: .5, opacity: 1, ease: "power2.out"})
 
 })
 }
@@ -239,12 +239,17 @@ if (btnCarrito){
 
 
 
-//*Quitando el modal
+//removing the modal
 
 document.querySelector(".modal-carrito").addEventListener("click", (e)=>{
     if (e.target.classList.contains("modal-carrito") || e.target.classList.contains("bi-x-lg")){
-        document.body.classList.remove("modal-open")
-        document.querySelector(".modal-carrito").classList.remove("isActive");
+        //Animando el carrito hacia la derecha.
+        gsap.to(".carrito", {x:200, opacity: 0, duration: .5, ease: "power2.out", 
+            onComplete: ()=> {
+            document.body.classList.remove("modal-open")
+            document.querySelector(".modal-carrito").classList.remove("isActive");
+            }
+        })
     }
 })
 
@@ -254,10 +259,10 @@ document.querySelector(".modal-carrito").addEventListener("click", (e)=>{
 
 
 
-//*El array para el carrito de compras ya está arriba
+
 //const shoppingCart = JSON.parse(sessionStorage.getItem("carrito")) || []; 
 const carritoDatos = document.querySelector(".informacion-compra");
-//*Elimina un producto del carrito y actualiza sessionStorage
+//Deleting a product and updating session storage
     function deleteObject (){
             gsap.utils.toArray(".elemento-btn-borrar").forEach((x, i)=>{
             x.addEventListener("click", ()=> {
@@ -272,16 +277,15 @@ const carritoDatos = document.querySelector(".informacion-compra");
         })
     }
 
-//*JS PARA RELLENAR LA ZONA DEL CARRITO DE COMPRAS
+
 
 let shoppingCartUpdating = () => {
 
     const repetidos = JSON.parse(sessionStorage.getItem("orderID")) || [];
 
-    //*Filtra los productos del carrito que ya están en la librería
+    //Filter if exist
     const repeatedProducts = shoppingCart.filter(p=> repetidos.includes(p.id));
 
-    //*Extrae los nombres de los productos repetidos
     const repeatedNames = repeatedProducts.map(p=> p.title);
 
     if (shoppingCart.length === 0){
@@ -345,7 +349,7 @@ let shoppingCartUpdating = () => {
 
 
 
-//*Creando con JS la sección para la confirmación de compra.
+
 const confirmacionCompra = document.querySelector(".confirmacion-compra");
 
 let confirmandoCompra = () => {
@@ -392,9 +396,9 @@ confirmacionCompra.innerHTML = `
 
 confirmandoCompra();
 
-//*Calcula el total del carrito y actualiza los elementos del DOM
-//*Hacemos esto para prevenir errores si el carrito está vacío.
+//null or empty check
 function calcularTotal() {
+  //reducing
   let x = shoppingCart.reduce((acc, item) => acc + item.price, 0);
 
   const subtotal = document.querySelector(".subtotal-line p:last-child");

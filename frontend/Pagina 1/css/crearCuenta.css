@@ -1,0 +1,562 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Patua+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cal+Sans&family=Patua+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cal+Sans&family=Patua+One&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    background: black;
+    color: white;
+}
+
+body{
+    overflow: hidden;
+}
+
+
+/*Parent container*/
+.main-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../img/Strivebackground.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+
+/*overlay*/
+.overlay{
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    background: rgba(68, 58, 58, 0.46);
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: difference;
+}
+
+/*blur*/
+.blur{
+    position: absolute;
+    z-index: -1; 
+    top: 0;
+    background: rgba(68, 58, 58, 0.1);
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(7.5px);
+    opacity: 0;
+}
+
+
+/*Container to place in the middle*/
+.create-account{
+    width: 60%;
+    height: 65vh;
+    display: flex;
+    background: transparent;
+    border-radius: 20px;
+    overflow: hidden;
+    min-width: 1700px;
+    max-width: 1800px;
+    z-index: 1;
+    overflow: hidden;
+    min-height: 1098px;
+}
+
+
+
+
+/*Img - left*/
+.left-side{
+    width: 43%;
+    height: 100%;
+    position: relative;
+}
+
+.left-side img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+
+
+
+
+/*text - right side*/
+
+.right-side{
+    width: 57%;
+    height: 100%;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    position: relative;
+    background-image: linear-gradient(120deg, rgb(17, 17, 17), rgb(24, 23, 23), rgb(51, 49, 49), rgb(46, 44, 44));
+}
+
+.right-side .logo-title{
+    width: 100%;
+    height: 12%;
+}
+
+.logo-title img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+
+
+
+
+
+
+
+/*user input*/
+.right-side .user-inputs{
+    width: 70%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.user-inputs .user-inputs-element{
+    height: 15%;
+    width: 72%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    position: relative;
+}
+
+.user-inputs-element label{
+    font-size: 1.5em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.user-inputs-element input{
+    height: 45px;
+    width: 100%;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-size: 1.5em;
+    background-color: #f3eeee;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+}
+
+.user-inputs-element input:focus{
+    outline: none;
+    border: solid 1px rgb(49, 97, 228);
+}
+
+
+/*error msg*/
+.input-error-message{
+    position: absolute;
+    bottom: -24%;
+    color: rgb(252, 75, 75);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.25em;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*btncreate*/
+
+.btnCrear{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.btnCrear button{
+    background-color: #127dd4;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 15px 50px;
+    border-radius: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    transition: .3s ease-in-out
+}
+
+.btnCrear button:hover{
+    background-color: #3898e2;
+}
+
+.btnCrear p{
+    font-size: 1.1em;
+}
+
+.btnCrear a{
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    transition: .3s ease-in-out;
+}
+
+.btnCrear a:hover{
+    color: #288fe2;
+}
+
+
+
+
+
+
+
+
+/*close icon*/
+.bi-x-circle{
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    font-size: 2em;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+    transform-origin: center;
+}
+
+.bi-x-circle:hover{
+    color: rgb(247, 100, 100);
+    transform: scale(1.2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Modal to confirm close*/
+.modal-confirmation{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; 
+    pointer-events: none; 
+}
+
+
+.confirmation-message{
+    background-color: rgba(139, 135, 135, 0.6);
+    display: flex;
+    flex-direction: column;
+    height: 10%;
+    width: 27%;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 10;
+    border-radius: 15px;
+    max-width: 600px;
+    min-width: 520px;
+    min-height: 127px;
+}
+
+.confirmation-message .confirmation-title{
+    font-family: 'Bebas neue';
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.confirmation-message .confirmation-options{
+    display: flex;
+    width: 80%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.confirmation-options a{
+    color: white;
+    text-decoration: none;
+    font-size: 2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 5px 70px;
+    background-color: rgb(43, 40, 40);
+    border-radius: 10px;
+    transition: .3s ease-in-out;
+}
+
+.confirmation-options a:hover{
+    background-color: #288fe2;
+}
+
+
+
+/*Modal overlay*/
+.modal-confirmation .overlay,
+.modal-creation-successful .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(24, 24, 24, .8);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*sucess modal*/
+.modal-creation-successful{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; 
+    pointer-events: none; 
+}
+
+.modal-creation-successful .confirmation-title h2{
+    color: rgb(54, 185, 54);
+}
+
+.confirmation-title p{
+    font-size: 1em;
+}
+
+
+.confirmation-title a{
+    text-decoration: underline;
+    color: white;
+    font-weight: 500;
+    transition: .4s ease-in-out;
+}
+
+.confirmation-title a:hover{
+    color: rgb(185, 217, 248);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*@media*/
+
+@media (max-width: 1430px){
+
+    body{
+        overflow-y: auto;
+    }
+
+    .create-account{ 
+        min-width: 650px; 
+        min-height: 1255px;
+        flex-direction: column;
+        align-items: center;
+        height: 95%;
+        width: 60%;
+        
+    }
+
+    .left-side{
+        height: 40%;
+        width: 100%;
+    }
+
+    .right-side{
+        width: 100%;
+       
+    }
+
+    .right-side .user-inputs{
+        height: 80%;
+        min-width: 570px;
+    }
+}
+
+
+@media (max-width: 768px){
+
+    body{
+        overflow-y: auto;
+    }
+
+    .create-account{
+        max-height: 1000px;
+        min-width: 445px;
+        min-height: 895px;
+        height: 100%;
+        width: 85%;
+    }
+    
+
+    .left-side{
+        height: 20%;
+    }
+
+    .right-side{
+        height: 80%;
+        
+    }
+
+    .logo-title{
+        display: none;
+    }
+
+    .right-side .user-inputs{
+        width: 100%;
+        min-width: unset;
+    }
+
+    .user-inputs .user-inputs-element{
+        height: 13%;
+        width: 90%;
+    }
+
+    .input-error-message{
+        bottom: -35%;
+        font-size: 1.1em;
+    }
+
+    .confirmation-message{
+        min-width: 450px;
+    }
+
+    .confirmation-message .confirmation-title{
+        font-size: 1.2em;
+    }
+
+    .confirmation-options a{
+        padding: 5px 55px;
+        font-size: 1.4em;
+    }
+
+}
+
+
+@media (max-width: 480px){
+    .create-account{
+        max-height: 780px;
+        min-width: 378px;
+        min-height: 765px;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .left-side{
+        display: none;
+    }
+
+    .right-side{
+        height: 95%;
+        width: 95%;
+    }
+
+    .user-inputs-element label{
+        font-size: 1.3em;
+    }
+
+    .input-error-message{
+        bottom: -22%;
+        font-size: .99em;
+    }
+
+    .user-inputs-element input{
+        height: 35px;
+        font-size: 1.3em;
+    }
+
+    .btnCrear button{
+        padding: 10px 45px;
+    }
+
+    .confirmation-message{
+        min-width: 400px;
+    }
+
+    .confirmation-message .confirmation-title{
+        font-size: 1.1em;
+    }
+
+    .confirmation-options a{
+        padding: 5px 45px;
+        font-size: 1.2em;
+    }
+
+}

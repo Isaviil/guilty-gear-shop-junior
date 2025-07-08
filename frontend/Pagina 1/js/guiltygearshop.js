@@ -1,16 +1,14 @@
 const dataProductos = JSON.parse(sessionStorage.getItem("productData")) || [];
 let shoppingCart = JSON.parse(sessionStorage.getItem("carrito")) || []; 
 
-
-
-//*Populando el boton del navbar Derecho 
+ 
 
 const user = JSON.parse(sessionStorage.getItem("user"));
 const navRight = document.querySelector(".nav-right");
 
 if (!user || user.userID ===null){
     navRight.innerHTML = `
-    <div class="nav-sign-in"><a href="login.html">SIGN IN</a></div>
+    <div class="nav-sign-in"><a href="login.html">Ingresar</a></div>
     <div class="nav-shop-name"><a href="#">Guilty Gear Store</a></div>
   `;
 } else {
@@ -35,8 +33,8 @@ if (!user || user.userID ===null){
   `;
 }
 
-//*Evitando que el "a" nos redireccione a algun otro lugar
-//*JS para el togglear el dropdown
+
+//Toggle dropdwn
 const dropdown = document.querySelector(".dropdown")
 
 
@@ -49,7 +47,7 @@ document.querySelector(".nav-sign-in").addEventListener("click", (e)=>{
     dropdownOpen = true;
 });
 
-//*Cerramos el UL
+//UL close
 window.addEventListener("click", (e) => {
   if (dropdownOpen){
     dropdown.style.opacity = 0;
@@ -58,7 +56,7 @@ window.addEventListener("click", (e) => {
   }
 });
 
-//*Cerrando sesión
+//Loggin out
 
 if (user && document.querySelector("#sign-out")){
     document.querySelector("#sign-out").addEventListener("click", ()=> {
@@ -76,7 +74,7 @@ if (user && document.querySelector("#sign-out")){
 
 
 
-//*Agregando al carrito al momento de clickear el button en el hero container
+//Adding hero container element to cart
 const btnHeroAdd = document.querySelector(".guiltyHero-text");
 let btnHeroId = siteDisplay.find(y => y.platforms.find( x => x.id === 18)).platforms.find( elem => elem.id === 18)
 let product = siteDisplay.find(y => y.platforms.find(x => x.id === 18));
@@ -163,8 +161,7 @@ heroContainerView()
 
 
 
-
-//*Generando el contenido del carrusel de manera dinámica
+//carousel
 
 const carouselThumbnails = document.querySelector(".guiltyHero-carousel")
 
@@ -191,7 +188,7 @@ carouselThumbnails.innerHTML = guiltyGearShopCarousel.map((x, i)=> {
 
 
 
-//*Tomando el tamaño del width para realizar los movimientos.
+
 
 let isAnimating = false;
 
@@ -201,7 +198,7 @@ const updateScrollWidth = () => {
 updateScrollWidth()
 window.addEventListener("resize", updateScrollWidth);
 
-//*Anexando los clones para loopear al carrusel
+//append and prepend clones
 const flechitas = gsap.utils.toArray(".flechitas .bi")
 const thumbnails = gsap.utils.toArray(".carousel-container");
 
@@ -217,7 +214,7 @@ carouselThumbnails.appendChild(cloneSecond);
 carouselThumbnails.prepend(clonePenultimo);
 carouselThumbnails.appendChild(cloneCentral);
 
-//*JS para las flechitas uqe harán correr los contenedores.
+//JS arrows
 
 let selectedIndex = 0;
 flechitas.forEach((x, i)=> {
@@ -232,7 +229,6 @@ flechitas.forEach((x, i)=> {
 
      if (i===0){
         selectedIndex--;
-        console.log(selectedIndex);
         gsap.to(".guiltyHero-carousel", {x: -widthSize*selectedIndex,
             onComplete: ()=> {
                 isAnimating = false;
@@ -245,7 +241,6 @@ flechitas.forEach((x, i)=> {
 
     } else {
         selectedIndex++;
-        console.log(selectedIndex);
         gsap.to(".guiltyHero-carousel", {x: -widthSize*selectedIndex,
             onComplete: ()=> {
                 isAnimating = false;
@@ -279,7 +274,7 @@ flechitas.forEach((x, i)=> {
 
 
 
-//*AGREGANDO LOS ELEMENTOS EN EL LA TIENDA.
+
 
 let contenedorPrincipal = () => {
 
@@ -291,7 +286,7 @@ elementosTienda.innerHTML = siteDisplay.filter(item => item.type.includes("hot")
 
     
     const pcPlatform = x.platforms.find(p => p.platform === "PC");
-    const uniqueID = pcPlatform? pcPlatform.id : "No hay id"; //*Verifica si es truthy, yatusa
+    const uniqueID = pcPlatform? pcPlatform.id : "No hay id"; 
     const alreadyInCart = shoppingCart.some(item => item.id === uniqueID);
 
     const inLibrary = storagePurchasedIds2.includes(uniqueID);
@@ -332,7 +327,6 @@ elementosTienda.innerHTML = siteDisplay.filter(item => item.type.includes("hot")
     })
     .join("");
 
-//*Agregamos el event listener para cada <a>, prevenir default y buscar el id correcto DESPUES de generar los elemntos
 
 document.querySelectorAll(".guilty-tienda-carrito a").forEach((x,i)=>{
 
@@ -367,14 +361,11 @@ contenedorPrincipal();
 
 
 
-//*AGREGANDO LOS THUMBNAILS DE LOS PERSONAJES ADICIONALES.
+//Thumbnail for additional characters
 const personajesThumbnail = document.querySelector(".character-thumbnailz");
 
-//personajesThumbnail.innerHTML = siteDisplay.filter( x=> x.includes("Character"));
-//const gatito = 
 
 personajesThumbnail.innerHTML = siteDisplay.filter( y=> y.type.includes("Character")).slice(3, 9).map((x,i)=>{
-//TODO ANOTAR COMO AGREGAR UN ID ÚNICO. GIL. ES PARA MATCHEAR ESTO CON TUS PRODUCTOS.
     const pcPlatform = x.platforms.find(x => x.platform === "PC");
     const uniqueID = pcPlatform? pcPlatform.id : "no hay id";
 
@@ -387,7 +378,7 @@ personajesThumbnail.innerHTML = siteDisplay.filter( y=> y.type.includes("Charact
 
 }).join("");
 
-//*Agregando el eventListener para que cada thumbnail reemplace los datos
+
 document.querySelectorAll(".guilty-characters-elements a").forEach((x, i)=>{
     x.addEventListener("click", (e)=>{
         e.preventDefault();
@@ -425,13 +416,11 @@ document.querySelectorAll(".guilty-characters-elements a").forEach((x, i)=>{
 
 
 
-//*MODAL - las variables están declaradas arriba
 //const dataProductos = JSON.parse(sessionStorage.getItem("productData")) || [];
 //let shoppingCart = JSON.parse(sessionStorage.getItem("carrito")) || []; 
 
 
-//*Checando que el usuario esté logueado antes de enviar a la página del carrito de compras.
-//!No lo confundas con productData.
+//User logged in?
 //const shoppingCart = JSON.parse(sessionStorage.getItem("carrito")) || []; 
 const btnAgregar = document.querySelector(".guilty-tienda-carrito a")
 
@@ -446,7 +435,7 @@ if (btnAgregar){
         window.location.href = "login.html";
         return;
     } else {        
-        //*Toggleando el modal
+        //Toggle modal
         if (!shoppingCart.find(y=> y.id === dataProductos.platforms.find(y=> y.platform === "PC").id)){
             shoppingCart.push({
             title: dataProductos.title,
@@ -462,7 +451,7 @@ if (btnAgregar){
 
         document.body.classList.add("modal-open");
         document.querySelector(".modal-carrito").classList.add("isActive");
-        document.querySelector(".guilty-tienda-carrito a").textContent = "Ya está en tu carrito!"; //*Actualizamos al clickear
+        document.querySelector(".guilty-tienda-carrito a").textContent = "Ya está en tu carrito!"; //update on click
         } else {
 
         shoppingCartUpdating();
@@ -476,7 +465,7 @@ if (btnAgregar){
 
 
 
-//*Triggereando el modal al momento de clickear el carrito.
+//modal trigger
 const btnCarrito = document.querySelector(".carrito-icono")
 
 if (btnCarrito){
@@ -489,8 +478,8 @@ if (btnCarrito){
     
     
     document.body.classList.add("modal-open"); //blur
-    document.querySelector(".modal-carrito").classList.add("isActive"); //cambiamos el posicionamiento
-
+    document.querySelector(".modal-carrito").classList.add("isActive"); //positioning
+    gsap.fromTo(".carrito", {x: 200, opacity: 0}, {x:0, duration: .5, opacity: 1, ease: "power2.out"})
 })
 }
 
@@ -508,11 +497,16 @@ if (btnCarrito){
 
 
 
-//*Quitando el modal
+//removing the modal
 document.querySelector(".modal-carrito").addEventListener("click", (e)=>{
-    if (e.target.classList.contains("modal-carrito") || e.target.classList.contains("bi-x-lg")){
-        document.body.classList.remove("modal-open")
-        document.querySelector(".modal-carrito").classList.remove("isActive");
+     if (e.target.classList.contains("modal-carrito") || e.target.classList.contains("bi-x-lg")){
+        //animating
+        gsap.to(".carrito", {x:200, opacity: 0, duration: .5, ease: "power2.out", 
+            onComplete: ()=> {
+            document.body.classList.remove("modal-open")
+            document.querySelector(".modal-carrito").classList.remove("isActive");
+            }
+        })
     }
 })
 
@@ -534,7 +528,6 @@ document.querySelector(".modal-carrito").addEventListener("click", (e)=>{
 
 
 
-//*El array para el carrito de compras ya está arriba
 //const shoppingCart = JSON.parse(sessionStorage.getItem("carrito")) || []; 
 const carritoDatos = document.querySelector(".informacion-compra");
     function deleteObject (){
@@ -552,16 +545,15 @@ const carritoDatos = document.querySelector(".informacion-compra");
         })
     }
 
-//*JS PARA RELLENAR LA ZONA DEL CARRITO DE COMPRAS
+//Cart html
 
 let shoppingCartUpdating = () => {
     
     const repetidos = JSON.parse(sessionStorage.getItem("orderID")) || [];
 
-    //*Del shopping cart, nuestro carrito, traemos solo los IDS de productos que se vayan a duplicar
     const repeatedProducts = shoppingCart.filter(p=> repetidos.includes(p.id));
 
-    //*Tras obtener los objetos repetidos, traemos los nombres 
+   
     const repeatedNames = repeatedProducts.map(p=> p.title);
 
     if (shoppingCart.length === 0){
@@ -637,7 +629,6 @@ let shoppingCartUpdating = () => {
 
 
 
-//*Creando con JS la sección para la confirmación de compra.
 const confirmacionCompra = document.querySelector(".confirmacion-compra");
 
 let confirmandoCompra = () => {
@@ -685,8 +676,8 @@ confirmacionCompra.innerHTML = `
 
 confirmandoCompra();
 
-//*Creando una función que sume los precios para llamarla después
-//*Hacemos esto para prevenir errores si el carrito está vacío.
+
+//null or empty check
 function calcularTotal() {
   let x = shoppingCart.reduce((acc, item) => acc + item.price, 0);
 
@@ -709,8 +700,6 @@ calcularTotal();
 
 
 
-
-//*Llamando al session storage dentro de miscomprasFetch para evitar duplicados
 
 
 

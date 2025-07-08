@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace GuiltyGearShop.Controllers
 {
     public class GGOrdersController : Controller
-    {     
+    {       
 
         private readonly OrdersDAO _dao;
         public GGOrdersController(OrdersDAO dao)
@@ -30,9 +30,8 @@ namespace GuiltyGearShop.Controllers
             return View(_dao.ListOrders());
         }
 
-        //Controller para los checkbox.
+        
         [HttpPost]        
-
 
         public IActionResult MarkAsFinished(List<int> selectedOrders)
         {
@@ -49,7 +48,7 @@ namespace GuiltyGearShop.Controllers
                 {
                     order.Status = "Finished";
                     order.ProductName = ""; 
-                    order.Purchase_Price = 9999; //SQL nullIF + Coalesce
+                    order.Purchase_Price = 9999;
                     order.ELIMINADO = "";
 
                     _dao.UpdateOrder(order);

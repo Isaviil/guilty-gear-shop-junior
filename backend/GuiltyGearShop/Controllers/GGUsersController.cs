@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GuiltyGearShop.Controllers
 {
-   
     public class GGUsersController : Controller
     {
         private readonly UsersDAO _dao;

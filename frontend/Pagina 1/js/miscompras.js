@@ -3,7 +3,7 @@ let shoppingCart = JSON.parse(sessionStorage.getItem("carrito")) || [];
 
 
 
-//*Cambiando el contenido del navbar dependiendo de si tengo mi session storage del usuario.
+//Changing the navbar if there's a user
 
 const user = JSON.parse(sessionStorage.getItem("user"));
 const navRight = document.querySelector(".nav-right");
@@ -45,10 +45,9 @@ if (!user || user.userID ===null){
 
 
 
-//*JS para el togglear el dropdown
+//Toggle dropdown
 const dropdown = document.querySelector(".dropdown")
 
-//*Similar al isAnimating; solo lo agregamos para agregar la condición de cuando cerrar el UL
 let dropdownOpen = false; 
 document.querySelector(".nav-sign-in").addEventListener("click", (e)=>{
     e.stopPropagation(); 
@@ -57,7 +56,7 @@ document.querySelector(".nav-sign-in").addEventListener("click", (e)=>{
     dropdownOpen = true;
 });
 
-//*Cerramos el UL
+//Closing
 window.addEventListener("click", (e) => {
   if (dropdownOpen){
     dropdown.style.opacity = 0;
@@ -67,7 +66,6 @@ window.addEventListener("click", (e) => {
 });
 
 
-//*Cerrando sesión
 
 if (user && document.querySelector("#sign-out")){
     document.querySelector("#sign-out").addEventListener("click", ()=> {
@@ -91,7 +89,7 @@ if (user && document.querySelector("#sign-out")){
 
 
 
-//*Triggereando el modal al momento de clickear el carrito.
+//Trigger modal on clicking the cart
 const btnCarrito = document.querySelector(".carrito-icono")
 
 if (btnCarrito){
@@ -115,7 +113,7 @@ if (btnCarrito){
 
 
 
-//*Quitando el modal
+//Removing the modal
 
 document.querySelector(".modal-carrito").addEventListener("click", (e)=>{
     if (e.target.classList.contains("modal-carrito") || e.target.classList.contains("bi-x-lg")){
@@ -129,7 +127,7 @@ document.querySelector(".modal-carrito").addEventListener("click", (e)=>{
 
 
 
-//*El array para el carrito de compras ya está arriba
+
 //const shoppingCart = JSON.parse(sessionStorage.getItem("carrito")) || []; 
 const carritoDatos = document.querySelector(".informacion-compra");
 
@@ -147,7 +145,7 @@ const carritoDatos = document.querySelector(".informacion-compra");
         })
     }
 
-//*JS PARA RELLENAR LA ZONA DEL CARRITO DE COMPRAS
+//shopping cart html
 let shoppingCartUpdating = () => {
 
     if (shoppingCart.length === 0){
@@ -209,7 +207,7 @@ let shoppingCartUpdating = () => {
 
 
 
-//*Creando con JS la sección para la confirmación de compra.
+
 const confirmacionCompra = document.querySelector(".confirmacion-compra");
 
 let confirmandoCompra = () => {
@@ -256,9 +254,10 @@ confirmacionCompra.innerHTML = `
 
 confirmandoCompra();
 
-//*Creando una función que sume los precios para llamarla después
-//*Hacemos esto para prevenir errores si el carrito está vacío.
+//preventing errors if null or empty
 function calcularTotal() {
+
+ //reducing
   let x = shoppingCart.reduce((acc, item) => acc + item.price, 0);
 
   const subtotal = document.querySelector(".subtotal-line p:last-child");

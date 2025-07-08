@@ -87,7 +87,7 @@ namespace LAYER_DIO
             }
         }
 
-        public GuiltyGearOrders SearchOrder(int cod) //para el details
+        public GuiltyGearOrders SearchOrder(int cod) 
         {
             try
             {

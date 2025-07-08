@@ -10,7 +10,7 @@ namespace LAYER_DIO
     {
         private readonly string _connectionString;
 
-       
+        
         public DAOLibrary(IConfiguration gatito) {
 
             _connectionString = gatito.GetConnectionString("DefaultConnection") ??

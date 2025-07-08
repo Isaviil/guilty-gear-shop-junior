@@ -3,12 +3,12 @@ USE GUILTYGEARPRACTICE2
 
 
 CREATE TABLE GuiltyGear_Product(
-	ProductID INT NOT NULL IDENTITY (1,1), --ID para los admin
-	OrderID NVARCHAR(10) NOT NULL, --ID para los usuarios
+	ProductID INT NOT NULL IDENTITY (1,1), 
+	OrderID NVARCHAR(10) NOT NULL, --ID user
 	Platform NVARCHAR(30) NOT NULL,
 	Price DECIMAL(10, 2) NOT NULL,
 	Type NVARCHAR(30) NOT NULL, --Digital or physical
-	Edition NVARCHAR(50) NOT NULL DEFAULT 'N/A', --can be empty for season pass etc
+	Edition NVARCHAR(50) NOT NULL DEFAULT 'N/A', 
 	ProductName NVARCHAR(50) NOT NULL,
 	Stock INT NOT NULL DEFAULT 0,
 	ELIMINADO NVARCHAR(3) DEFAULT 'NO'
@@ -17,7 +17,7 @@ ALTER TABLE GuiltyGear_Product ADD CONSTRAINT PK_ProductID PRIMARY KEY (ProductI
 
 
 CREATE TABLE GuiltyGear_User(
-	UserID NVARCHAR(10) NOT NULL, --ID DEL USUARIO PK
+	UserID NVARCHAR(10) NOT NULL, 
 	Name NVARCHAR(40) NOT NULL,
 	LastName NVARCHAR(50) NOT NULL,
 	Email NVARCHAR(80) NOT NULL,
@@ -26,13 +26,17 @@ CREATE TABLE GuiltyGear_User(
 	ELIMINADO NVARCHAR(3) DEFAULT 'NO'
 )
 ALTER TABLE GuiltyGear_User ADD CONSTRAINT PK_UserID PRIMARY KEY (UserID);
+Alter TABLE GuiltyGear_USER ADD CONSTRAINT UQ_Email UNIQUE (Email);
+Alter TABLE GuiltyGear_USER ADD CONSTRAINT UQ_Phone UNIQUE (Phone);
+ALTER TABLE GuiltyGear_User ALTER COLUMN Password NVARCHAR(100) NOT NULL;
 
-SElect*from GuiltyGear_User
+
+
 
 CREATE TABLE GuiltyGear_Orders(
 	PurchaseID INT NOT NULL IDENTITY(1,1),
 	UserID NVARCHAR(10) NOT NULL, 
-	ProductID INT NOT NULL, --ID para los usuarios
+	ProductID INT NOT NULL, 
 	ProductName NVARCHAR(40) NOT NULL,
 	Purchase_Price DECIMAL(10, 2) NOT NULL,
 	ELIMINADO NVARCHAR(3) DEFAULT 'NO',
@@ -51,7 +55,7 @@ GO
 
 
 
---AGREGANDO LOS DATOS
+--Adding data
 -- Season Pass 1 to 4 (Digital Add-on)
 -- ===========================
 -- Stored Procedures para Dropdowns
@@ -94,7 +98,7 @@ EXECUTE DBO.SelectEdition
 GO
 
 
---Devolver una lista que busque por plataforma
+--Platform
 
 CREATE OR ALTER PROCEDURE DBO.ListarPorPlataforma
 @Platform as NVARCHAR(30)
@@ -111,7 +115,7 @@ GO
 
 
 -- ==========================================================
--- Creación de Stored Procedures para la tabla GuiltyGear_Product
+-- Stored Procedures table GuiltyGear_Product
 -- ==========================================================
 
 CREATE OR ALTER PROCEDURE DBO.AddDataProductos
@@ -156,7 +160,7 @@ GO
 EXEC DBO.DeleteDataProductos '1'
 GO
 
---Hard delete para el carrito de compras
+--Hard delete shopping cart
 CREATE OR ALTER PROCEDURE DBO.DeleteOrderCompletely
     @PurchaseID INT
 AS
@@ -164,6 +168,7 @@ BEGIN
     DELETE FROM GuiltyGear_Orders WHERE PurchaseID = @PurchaseID;
 END
 GO
+
 
 CREATE OR ALTER PROCEDURE DBO.DisplayDataProductos
 AS
@@ -210,7 +215,7 @@ EXECUTE DBO.SearchDataProductos 1
 GO
 
 -- ==========================================================
--- Creación de Stored Procedures para la tabla GuiltyGear_User
+-- Stored Procedures table GuiltyGear_User
 -- ==========================================================
 
 
@@ -218,7 +223,7 @@ CREATE OR ALTER PROCEDURE DBO.AddDataUser
   @Name NVARCHAR(40),
   @LastName NVARCHAR(50),
   @Email NVARCHAR(80),
-  @Password NVARCHAR(20),
+  @Password NVARCHAR(100),
   @Phone NVARCHAR(10) = 'N/A' 
 AS
 BEGIN
@@ -312,13 +317,12 @@ GO
 
 
 -- ==========================================================
--- Creación de Stored Procedures para la tabla GuiltyGear_Orders
+-- Stored Procedures table GuiltyGear_Orders
 -- ==========================================================
 SELECT*FROM GuiltyGear_Orders
 GO
 
---Correcto
--- Insertar una nueva orden (finalizar compra)
+-- Insert new order
 CREATE OR ALTER PROCEDURE DBO.AddDataOrder
     @UserID NVARCHAR(10),
     @ProductID INT,
@@ -342,7 +346,7 @@ BEGIN
 END
 GO
 
--- Actualizar una orden (uso administrativo)
+-- update -admin view-
 CREATE OR ALTER PROCEDURE DBO.UpdateOrder
 	@PurchaseID AS INT,
     @ProductName AS NVARCHAR(40),
@@ -364,7 +368,7 @@ GO
 
 
 
---Listaremos los elementos del carrito
+--list order by id
 CREATE OR ALTER PROCEDURE DBO.SearchOrderByUserID
 @UserID AS NVARCHAR(10)
 AS
