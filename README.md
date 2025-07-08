@@ -1,49 +1,79 @@
-# Tienda online inspirada en Guilty Gear Strive
+# Guilty Gear Strive Inspired Online Store
 
-**Desarrollador:** Isaac V.
-**Proyecto Académico Individual**
+**Aspiring Developer:** Isaac V.
+**Academic Individual Project**
 
-## Descripción del Proyecto
-Tienda online inspirada en Guilty Gear Strive que se desarrolló con tecnologías modernas para ofrecer una experiencia completa de compra digital.
+---
 
-- **Frontend:** HTML5, CSS3 (Grid y Flexbox), JavaScript con GSAP para animaciones.  
-- **Backend:** ASP.NET Core con C# para lógica y controladores RESTful.  
-- **Base de Datos:** SQL Server para gestión de usuarios, productos y órdenes.
+## Project Description
 
-## Funcionalidades Implementadas
-- Gestión completa de productos, usuarios y órdenes.  
-- Interfaz responsiva con animaciones fluidas y carrusel.  
-- Modal para carrito de compras con funcionalidad de añadir/quitar productos.  
-- Registro de usuario (actualmente pendiente de implementación vía interfaz).  
-- Generación dinámica de PDFs con resumen de compra (90% completado).  
-- Validaciones y manejo de sesiones con fetch y sessionStorage.
+An online store inspired by Guilty Gear Strive.
 
-## Estado
-- Proyecto funcional y desplegable.  
-- Registro de usuario en desarrollo (modal planeado).  
-- Generación de PDF pendiente agregar nombre de usuario.
+**Frontend:** HTML5, CSS3 (Grid and Flexbox), JavaScript with GSAP for animations  
+**Backend:** ASP.NET Core with C# for business logic and RESTful controllers  
+**Database:** SQL Server for managing users, products, and orders
 
-## Uso
-1. Clonar repositorio.  
-2. Configurar base de datos SQL Server con scripts proporcionados.  
-3. Ejecutar backend ASP.NET Core.  
-4. Abrir frontend en navegador para interactuar con la tienda.
-5. "La carpeta 'proyecto 1' debe estar dentro de otra carpeta para que la redirección funcione correctamente. Por ejemplo: 'ProyectoGG/pagina1'."
+---
 
-## 🔐 Acceso de prueba (usuario precreado)
+## Features Implemented
 
-> Debido a que la creación de usuarios aún no está implementada desde la interfaz, se debe usar el siguiente usuario para ingresar:
-- **Email:** `sol.badguy@guiltygear.com`  
-- **Password:** `Sol2025`
+- Management of products, users, and orders  
+- Responsive user interface with smooth animations and carousel  
+- Shopping cart modal with add/remove product functionality  
+- User registration and login with secure password hashing  
+- Dynamic PDF generation with purchase summary (90% complete)  
+- Validation and session management with fetch API and sessionStorage
 
-## Próximos pasos / Pendientes
-- Implementar mensaje de bienvenida para usuarios al ingresar a la tienda.  
-- Agregar mensaje de agradecimiento tras finalizar la compra.  
-- Ajustar estilos con reglas `@media` para mejorar la responsividad en diferentes dispositivos.  
-- Integrar animaciones con GSAP para mejorar la experiencia visual.
+---
 
+## Current Status
 
-## ⚠️ Aviso
-Este proyecto fue desarrollado únicamente con fines educativos como parte de una práctica académica.  
-Todos los derechos de Guilty Gear, sus personajes, logotipos, imágenes y demás elementos visuales pertenecen a **Arc System Works**.  
-No se busca obtener ningún beneficio económico ni infringir los derechos de autor de la marca original.
+- Fully functional and deployable  
+- User registration and login implemented  
+- PDF generation pending final user info integration  
+- UI responsiveness improved with media queries and dynamic units  
+- GSAP animations integrated for enhanced user experience
+
+---
+
+## Setup Instructions
+
+1. Clone the repository  
+2. Use **Microsoft SQL Server** with **Windows Authentication** to configure the database using the provided scripts  
+3. Run the backend with **ASP.NET Core**  
+4. Open the frontend folder (`pagina1`) inside another folder to ensure proper redirection
+   
+---
+
+## Demo Account (for testing)
+
+User registration is now available through the log in interface, so you can create your own account.
+
+If you want to test quickly, you can still use the pre-created demo account:  
+- Email: sol.badguy@guiltygear.com  
+- Password: Sol2025
+
+---
+
+## Next Steps
+
+- Implement welcome message for users upon login  
+- Add error messages for failed login attempts  
+- Validate email format and phone number length  
+- Improve responsiveness with @media rules for main pages  
+- Integrate additional GSAP animations  
+- Update some backend method and variable names for clarity  
+
+---
+
+## Credits
+
+Thanks to [DatCravat](https://www.datcravat.com) for providing images used in the sign-up interface.
+
+---
+
+## Disclaimer
+
+This project is purely for educational purposes as part of an academic practice.  
+All Guilty Gear characters, logos, images, and visual elements belong to Arc System Works.  
+No commercial gain or copyright infringement intended.
