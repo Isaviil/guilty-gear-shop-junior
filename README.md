@@ -45,15 +45,6 @@ An online store inspired by Guilty Gear Strive.
    
 ---
 
-## Demo Account (for testing)
-
-User registration is now available through the log in interface, so you can create your own account.
-
-If you want to test quickly, you can still use the pre-created demo account:  
-- Email: sol.badguy@guiltygear.com  
-- Password: Sol2025
-
----
 
 ## Next Steps
 
