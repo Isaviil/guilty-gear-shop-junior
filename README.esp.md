@@ -29,14 +29,6 @@ Tienda online inspirada en Guilty Gear Strive.
 3. Ejecutar el backend con ASP.NET Core  
 4. Abrir la carpeta frontend (`pagina1`) dentro de otra carpeta para asegurar la redirección correcta  
 
-## Cuenta de Prueba (para testeo)  
-El registro de usuarios ya está disponible en la interfaz de login, por lo que puedes crear tu propia cuenta.
-
-Si quieres probar rápido, aún puedes usar la cuenta demo precreada:
-
-- **Email:** sol.badguy@guiltygear.com  
-- **Password:** Sol2025  
-
 ## Próximos Pasos  
 - Implementar mensaje de bienvenida para usuarios al ingresar  
 - Agregar mensajes de error para fallos en el login  
