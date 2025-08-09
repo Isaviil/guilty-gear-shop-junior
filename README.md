@@ -1,3 +1,5 @@
+<img width="1995" height="1218" alt="Image" src="https://github.com/user-attachments/assets/de0667ca-617e-44c7-80df-f2fe6be2134d" />
+
 Tienda en Línea Inspirada en Guilty Gear Strive
 Proyecto Personal
 
@@ -56,6 +58,7 @@ Actualizar nombres de métodos y variables en backend para mayor claridad
 
 Créditos
 Algunas imágenes utilizadas pertenecen a DatCravat
+
 Este proyecto es únicamente con fines educativos y de práctica personal.
 Todos los personajes, logos, imágenes y elementos visuales de Guilty Gear pertenecen a Arc System Works.
 No se busca ningún lucro comercial ni infringir derechos de autor.
