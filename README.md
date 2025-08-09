@@ -1,64 +1,73 @@
 <img width="1995" height="1218" alt="Image" src="https://github.com/user-attachments/assets/de0667ca-617e-44c7-80df-f2fe6be2134d" />
 
-Tienda en Línea Inspirada en Guilty Gear Strive
-Proyecto Personal
+# Tienda en Línea Inspirada en Guilty Gear Strive
 
-Descripción del Proyecto
-Una tienda en línea inspirada en Guilty Gear Strive.
+**Proyecto académico y personal**
 
-Frontend: HTML5, CSS3 (Grid y Flexbox), JavaScript con GSAP para animaciones
-Backend: ASP.NET Core con C# para la lógica de negocio y controladores RESTful
-Base de datos: SQL Server para gestionar usuarios, productos y pedidos
+---
 
-Funcionalidades Implementadas
-Gestión de productos, usuarios y pedidos
+## Descripción del Proyecto
 
-Interfaz responsiva con animaciones suaves y carrusel
 
-Modal de carrito de compras con funcionalidad para agregar y eliminar productos
+Una tienda en línea inspirada en Guilty Gear Strive, creada desde cero utilizando HTML, CSS y JavaScript básico para la estructura, estilos y funcionalidad inicial.
 
-Registro e inicio de sesión de usuarios con hash seguro de contraseñas
 
-Generación dinámica de PDF con resumen de compra (90% completado)
+**Frontend:**  
+HTML5, CSS3 (Grid y Flexbox), JavaScript con GSAP para las animaciones.
 
-Validación y gestión de sesión usando fetch API y sessionStorage
+**Backend:**  
+ASP.NET Core con C# para la lógica de negocio y controladores RESTful
 
-Estado Actual
-Totalmente funcional y listo para desplegar
+**Base de datos:**  
+SQL Server para gestionar usuarios, productos y pedidos
 
-Registro e inicio de sesión de usuarios implementados
+---
 
-Generación de PDF pendiente integración final de datos del usuario
+## Instrucciones de Configuración
+Como no está alojado en línea, es necesario seguir los siguientes pasos:
 
-Mejoras en la responsividad con media queries y unidades dinámicas
+1. Clonar el repositorio  
+2. Usar **Microsoft SQL Server** con **Windows Authentication** para configurar la base de datos con los scripts proporcionados  
+3. Ejecutar el backend con **ASP.NET Core**  
+4. Abrir la carpeta frontend (`pagina1`) dentro de otra carpeta para asegurar el correcto redireccionamiento
 
-Animaciones con GSAP integradas para mejor experiencia de usuario
+---
 
-Instrucciones de Configuración
-Clonar el repositorio
+## Funcionalidades Implementadas
 
-Usar Microsoft SQL Server con Windows Authentication para configurar la base de datos con los scripts proporcionados
+- Gestión de productos, usuarios y pedidos  
+- Interfaz responsiva con animaciones suaves y carrusel  
+- Modal de carrito de compras con funcionalidad para agregar y eliminar productos  
+- Registro e inicio de sesión de usuarios con hash seguro de contraseñas  
+- Generación dinámica de PDF con resumen de compra (90% completado)  
+- Validación y gestión de sesión usando fetch API y sessionStorage
 
-Ejecutar el backend con ASP.NET Core
+---
 
-Abrir la carpeta frontend (pagina1) dentro de otra carpeta para asegurar el correcto redireccionamiento
+## Estado Actual
 
-Próximos Pasos
-Implementar mensaje de bienvenida para usuarios al iniciar sesión
+- Funcional y listo para desplegar  
+- Registro e inicio de sesión de usuarios implementados  
+- Generación de PDF pendiente integración final de datos del usuario  
 
-Añadir mensajes de error para intentos fallidos de inicio de sesión
+---
 
-Validar formato de email y longitud de teléfono
+## A implementar en un futuro...
 
-Mejorar la responsividad con reglas @media para las páginas principales
+- Implementar mensaje de bienvenida para usuarios al iniciar sesión  
+- Añadir mensajes de error para intentos fallidos de inicio de sesión  
+- Validar formato de email y longitud de teléfono  
+- Mejorar la responsividad con reglas @media para las páginas principales  
+- Actualizar nombres de métodos y variables en backend para mayor claridad  
 
-Integrar animaciones adicionales con GSAP
+---
 
-Actualizar nombres de métodos y variables en backend para mayor claridad
+## Créditos
 
-Créditos
-Algunas imágenes utilizadas pertenecen a DatCravat
+Algunas imágenes utilizadas pertenecen a [DatCravat](https://www.instagram.com/datcravat/)  
 
-Este proyecto es únicamente con fines educativos y de práctica personal.
-Todos los personajes, logos, imágenes y elementos visuales de Guilty Gear pertenecen a Arc System Works.
-No se busca ningún lucro comercial ni infringir derechos de autor.
+---
+
+Este proyecto es únicamente con fines educativos y de práctica personal.  
+
+Todos los personajes, logos, imágenes y elementos visuales de Guilty Gear pertenecen a Arc System Works.  
