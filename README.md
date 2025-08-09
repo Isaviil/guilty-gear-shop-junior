@@ -1,16 +1,13 @@
 <img width="1995" height="1218" alt="Image" src="https://github.com/user-attachments/assets/de0667ca-617e-44c7-80df-f2fe6be2134d" />
 
-# Tienda en Línea Inspirada en Guilty Gear Strive
+# Tienda de compras online inspirada en Guilty Gear Strive
 
 **Proyecto académico y personal**
-
 ---
 
 ## Descripción del Proyecto
 
-
 Una tienda en línea inspirada en Guilty Gear Strive, creada desde cero utilizando HTML, CSS y JavaScript básico para la estructura, estilos y funcionalidad inicial.
-
 
 **Frontend:**  
 HTML5, CSS3 (Grid y Flexbox), JavaScript con GSAP para las animaciones.
@@ -41,14 +38,6 @@ Como no está alojado en línea, es necesario seguir los siguientes pasos:
 - Registro e inicio de sesión de usuarios con hash seguro de contraseñas  
 - Generación dinámica de PDF con resumen de compra (90% completado)  
 - Validación y gestión de sesión usando fetch API y sessionStorage
-
----
-
-## Estado Actual
-
-- Funcional y listo para desplegar  
-- Registro e inicio de sesión de usuarios implementados  
-- Generación de PDF pendiente integración final de datos del usuario  
 
 ---
 
