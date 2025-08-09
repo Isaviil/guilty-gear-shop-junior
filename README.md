@@ -1,68 +1,61 @@
-# Guilty Gear Strive Inspired Online Store
+Tienda en Línea Inspirada en Guilty Gear Strive
+Proyecto Personal
 
-**Personal Project**
+Descripción del Proyecto
+Una tienda en línea inspirada en Guilty Gear Strive.
 
----
+Frontend: HTML5, CSS3 (Grid y Flexbox), JavaScript con GSAP para animaciones
+Backend: ASP.NET Core con C# para la lógica de negocio y controladores RESTful
+Base de datos: SQL Server para gestionar usuarios, productos y pedidos
 
-## Project Description
+Funcionalidades Implementadas
+Gestión de productos, usuarios y pedidos
 
-An online store inspired by Guilty Gear Strive.
+Interfaz responsiva con animaciones suaves y carrusel
 
-**Frontend:** HTML5, CSS3 (Grid and Flexbox), JavaScript with GSAP for animations  
-**Backend:** ASP.NET Core with C# for business logic and RESTful controllers  
-**Database:** SQL Server for managing users, products, and orders
+Modal de carrito de compras con funcionalidad para agregar y eliminar productos
 
----
+Registro e inicio de sesión de usuarios con hash seguro de contraseñas
 
-## Features Implemented
+Generación dinámica de PDF con resumen de compra (90% completado)
 
-- Management of products, users, and orders  
-- Responsive user interface with smooth animations and carousel  
-- Shopping cart modal with add/remove product functionality  
-- User registration and login with secure password hashing  
-- Dynamic PDF generation with purchase summary (90% complete)  
-- Validation and session management with fetch API and sessionStorage
+Validación y gestión de sesión usando fetch API y sessionStorage
 
----
+Estado Actual
+Totalmente funcional y listo para desplegar
 
-## Current Status
+Registro e inicio de sesión de usuarios implementados
 
-- Fully functional and deployable  
-- User registration and login implemented  
-- PDF generation pending final user info integration  
-- UI responsiveness improved with media queries and dynamic units  
-- GSAP animations integrated for enhanced user experience
+Generación de PDF pendiente integración final de datos del usuario
 
----
+Mejoras en la responsividad con media queries y unidades dinámicas
 
-## Setup Instructions
+Animaciones con GSAP integradas para mejor experiencia de usuario
 
-1. Clone the repository  
-2. Use **Microsoft SQL Server** with **Windows Authentication** to configure the database using the provided scripts  
-3. Run the backend with **ASP.NET Core**  
-4. Open the frontend folder (`pagina1`) inside another folder to ensure proper redirection
-   
----
+Instrucciones de Configuración
+Clonar el repositorio
 
+Usar Microsoft SQL Server con Windows Authentication para configurar la base de datos con los scripts proporcionados
 
-## Next Steps
+Ejecutar el backend con ASP.NET Core
 
-- Implement welcome message for users upon login  
-- Add error messages for failed login attempts  
-- Validate email format and phone number length  
-- Improve responsiveness with @media rules for main pages  
-- Integrate additional GSAP animations  
-- Update some backend method and variable names for clarity  
+Abrir la carpeta frontend (pagina1) dentro de otra carpeta para asegurar el correcto redireccionamiento
 
----
+Próximos Pasos
+Implementar mensaje de bienvenida para usuarios al iniciar sesión
 
-## Credits
+Añadir mensajes de error para intentos fallidos de inicio de sesión
 
-Some of the images used belong to [DatCravat](https://www.datcravat.com) 
----
+Validar formato de email y longitud de teléfono
 
+Mejorar la responsividad con reglas @media para las páginas principales
 
+Integrar animaciones adicionales con GSAP
 
-This project is purely for educational purposes as part of a personal practice.  
-All Guilty Gear characters, logos, images, and visual elements belong to Arc System Works.  
-No commercial gain or copyright infringement intended.
+Actualizar nombres de métodos y variables en backend para mayor claridad
+
+Créditos
+Algunas imágenes utilizadas pertenecen a DatCravat
+Este proyecto es únicamente con fines educativos y de práctica personal.
+Todos los personajes, logos, imágenes y elementos visuales de Guilty Gear pertenecen a Arc System Works.
+No se busca ningún lucro comercial ni infringir derechos de autor.
